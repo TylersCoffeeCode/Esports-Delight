@@ -1,0 +1,29 @@
+{
+  "name": "esports-delight",
+  "version": "1.0.0",
+  "description": "### Created March 2023 #### By  Tyler Coats [Github](https://github.com/TylersCoffeeCode) || [Linkedin](https://www.linkedin.com/in/tylerccoats/)  ***",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TylersCoffeeCode/Esports-delight.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TylersCoffeeCode/Esports-delight/issues"
+  },
+  "homepage": "https://github.com/TylersCoffeeCode/Esports-delight#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.10.0",
+    "sequelize": "^6.30.0"
+  }
+}
