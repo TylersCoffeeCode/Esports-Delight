@@ -12,6 +12,7 @@ module.exports = {
       teamOneImage: 'https://1000logos.net/wp-content/uploads/2020/09/Navi-logo.png',
       teamTwo: 'LGD',
       teamTwoImage: 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e8/LGD_Gaming_logo_old.png/revision/latest/scale-to-width-down/1200?cb=20181102100944',
+      gameImg: 'https://cdn.cloudflare.steamstatic.com/steam/apps/570/capsule_616x353.jpg?t=1678300512',
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -24,6 +25,7 @@ module.exports = {
       teamOneImage: 'https://1000logos.net/wp-content/uploads/2020/09/Navi-logo.png',
       teamTwo: 'LGD',
       teamTwoImage: 'https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/e/e8/LGD_Gaming_logo_old.png/revision/latest/scale-to-width-down/1200?cb=20181102100944',
+      gameImg: 'https://cdn.cloudflare.steamstatic.com/steam/apps/570/capsule_616x353.jpg?t=1678300512',
       createdAt: new Date(),
       updatedAt: new Date()
     }]

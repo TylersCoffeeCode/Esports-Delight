@@ -48,6 +48,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    gameImg: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Tournaments',
