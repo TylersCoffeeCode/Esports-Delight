@@ -12,6 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Tournaments.init({
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false
