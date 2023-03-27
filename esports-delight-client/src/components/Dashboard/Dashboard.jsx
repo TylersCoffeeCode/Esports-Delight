@@ -1,10 +1,19 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import axios from 'axios'
 
 const Dashboard = () => {
 
     const [tournaments, setTournaments] = useState([])
 
+    const getTournaments = async () => {
+        const res = await axios.get('http://localhost:3001/api/tournaments/')
+        console.log(res.data);
+        setTournaments(res.data)
+    }
 
+    useEffect(() => {
+        getTournaments()
+    }, [])
 
     return (
         <div className=" bg-[#0B0C13] w-full h-[100vh] flex flex-wrap items-start">
@@ -23,11 +32,19 @@ const Dashboard = () => {
                 <div className=" w-full border-b-2 pb-2">
                     <h2>Tournaments</h2>
                 </div>
-                <div className=" w-[95%] h-1/2 bg-purple-300 mt-4 border-2">
-
+                <div className=" w-[95%] h-1/2 mt-4 border-2">
+                    {/* {tournaments[0].title} */}
                 </div>
-                <div className=" bg-red-200 w-[95%] h-1/3 mt-2">
+                <div className="w-[95%] h-1/3 mt-2 flex">
+                    {tournaments.map((tournament) => (
+                        <div className="flex flex-wrap w-64 justify-center h-full mr-6 border-2 border-white">
+                            <h1 className=" w-full text-center">{tournament.title}</h1>
+                            <img src={tournament.teamOneImage} alt="" className=" w-1/2 h-8 object-contain"/>
+                            <img src={tournament.teamTwoImage} alt="" className=" w-1/2 h-8 object-contain"/>
+                            <h3>{tournament.date}</h3>
 
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
