@@ -1,4 +1,11 @@
+import { useState } from "react"
+
 const Dashboard = () => {
+
+    const [tournaments, setTournaments] = useState([])
+
+
+
     return (
         <div className=" bg-[#0B0C13] w-full h-[100vh] flex flex-wrap items-start">
             <div className=" bg-red-300 w-11/12 h-[40%] ml-8 mt-[5rem] flex flex-wrap">
