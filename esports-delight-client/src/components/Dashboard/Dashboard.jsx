@@ -57,19 +57,51 @@ const Dashboard = () => {
 
     return (
         <div className=" bg-[#0B0C13] w-full h-[100vh] flex flex-wrap items-start">
-            {showPopup && (
+            {selectedTab === 1 && showPopup && (
                 <div className="popup absolute w-11/12 h-[91%] bg-[rgb(0,32,63)] m-auto left-0 right-0 bottom-[5%] flex flex-wrap justify-center items-center text-center border-black border-2 rounded-2xl">
-                    <div className=" h-full flex flex-wrap justify-center">
+                    <div className=" h-full flex flex-wrap justify-center w-full">
                         <div className="flex flex-wrap w-3/4">
                             <ul className="flex flex-wrap w-full justify-between pt-4">
-                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer">Overview</li>
-                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer">Teams</li>
-                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer">Info</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(1)}>Overview</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(2)}>Teams</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(3)}>Info</li>
                             </ul>
                         </div>
                         <p className="w-full text-white text-2xl">{selectedTournament.title}</p>
                         <p className="w-full text-white">{selectedTournament.date}</p>
                         <img src={selectedTournament.gameImg} alt="" className="w-full h-2/3" />
+                        <button onClick={() => setShowPopup(false)} className=" bg-orange-400 w-32 h-8">Close</button>
+                    </div>
+                </div>
+            )}
+            {selectedTab === 2 && showPopup && (
+                <div className="popup absolute w-11/12 h-[91%] bg-[rgb(0,32,63)] m-auto left-0 right-0 bottom-[5%] flex flex-wrap justify-center items-center text-center border-black border-2 rounded-2xl">
+                    <div className=" h-full flex flex-wrap justify-center w-full">
+                        <div className="flex flex-wrap w-3/4">
+                            <ul className="flex flex-wrap w-full justify-between pt-4">
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(1)}>Overview</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(2)}>Teams</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(3)}>Info</li>
+                            </ul>
+                        </div>
+                        <p className="w-full text-white text-2xl">Team Array goes here</p>
+                        <p className="w-full text-white"></p>
+                        <button onClick={() => setShowPopup(false)} className=" bg-orange-400 w-32 h-8">Close</button>
+                    </div>
+                </div>
+            )}
+            {selectedTab === 3 && showPopup && (
+                <div className="popup absolute w-11/12 h-[91%] bg-[rgb(0,32,63)] m-auto left-0 right-0 bottom-[5%] flex flex-wrap justify-center items-center text-center border-black border-2 rounded-2xl">
+                    <div className=" h-full flex flex-wrap justify-center w-full">
+                        <div className="flex flex-wrap w-3/4">
+                            <ul className="flex flex-wrap w-full justify-between pt-4">
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(1)}>Overview</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(2)}>Teams</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(3)}>Info</li>
+                            </ul>
+                        </div>
+                        <p className="w-full text-white text-2xl">{selectedTournament.content}</p>
+                        <p className="w-full text-white"></p>
                         <button onClick={() => setShowPopup(false)} className=" bg-orange-400 w-32 h-8">Close</button>
                     </div>
                 </div>
