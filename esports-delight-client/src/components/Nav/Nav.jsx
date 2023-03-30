@@ -19,8 +19,8 @@ const Nav = () => {
         </div>
         <div className='w-2/4 h-full flex items-center justify-end'>
           <div className='flex h-3/4 items-center border-l-2'>
-            <Link className='ml-6 mr-6'>USER</Link>
-            <Link className='mr-6'>Settings</Link>
+            <Link className='ml-6 mr-6 text-white'>USER</Link>
+            <Link className='mr-6 text-white'>Settings</Link>
           </div>
         </div>
       </div>

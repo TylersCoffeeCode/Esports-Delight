@@ -151,8 +151,6 @@ const Dashboard = () => {
                     <div className=" w-full flex flex-wrap bg-[rgba(0,0,0,0.7)]">
                         <div className=" w-2/5 bg-[#0000007c] flex flex-wrap items-center">
                             <h2 className=" w-full text-center text-white text-2xl">{singleTournament.title}</h2>
-                            <img src={singleTournament.teamOneImage} alt="" className=" w-1/2 h-24 object-contain" />
-                            <img src={singleTournament.teamTwoImage} alt="" className=" w-1/2 h-24 object-contain" />
                             <h4 className=" w-full text-center text-white">{singleTournament.date}</h4>
                         </div>
                         <div className=" w-3/5 " style={{
