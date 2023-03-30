@@ -6,6 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class TournamentTeams extends Model {
     
     static associate(models) {
+      TournamentTeams.belongsTo(models.Teams, {
+        foreignKey: 'teamId',
+        as: 'teamList'
+      })
     }
   }
   TournamentTeams.init({

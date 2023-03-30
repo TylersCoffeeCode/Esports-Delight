@@ -5,5 +5,5 @@ Router.get('/', controller.GetTournaments)
 Router.get('/id/:id', controller.GetTournamentById)
 Router.post('/create', controller.createTournament)
 Router.get('/teamList', controller.getTeamList)
-Router.get('/team/all', controller.findTeams)
+Router.get('/team/all/:id', controller.findTeams)
 module.exports = Router

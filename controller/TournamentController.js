@@ -68,11 +68,20 @@ const createTournament = async (req, res) => {
 
 const findTeams = async (req, res) => {
     try {
-        console.log('HELLO DDR');
-        const tTeams = await TournamentTeams.findAll({ where: { tournamentId: 6 } })
+        const { id } = req.params
+        const tTeams = await TournamentTeams.findAll({
+            where: { tournamentId: id },
+            include: [
+                {
+                    model: Teams,
+                    as: 'teamList',
+                    attributes: ['id', 'teamName', 'teamLogo']
+                }
+            ]
+        })
         return res.status(200).json(tTeams);
     } catch (error) {
-        return res.status(500).json({ error: 'Error' })
+        console.log(error)
     }
 }
 

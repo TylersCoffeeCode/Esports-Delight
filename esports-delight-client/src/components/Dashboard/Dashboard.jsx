@@ -120,7 +120,7 @@ const Dashboard = () => {
                             backgroundSize: 'cover',
                             backgroundPosition: 'center'
                         }}>
-                        <div className=" w-full h-1/4 bg-[rgba(0,0,0,0.8)]">
+                        <div className=" w-full h-1/4 bg-[rgba(0,0,0,0.8)] rounded">
                             <h1 className="text-white pl-2 mb-4">{singleArticle.title}</h1>
                             <Link className=" text-blue-300 float-right mr-2"><p>Read More →</p></Link>
                         </div>
@@ -135,7 +135,7 @@ const Dashboard = () => {
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center'
                                 }}>
-                                <div className=" h-1/3 w-full bg-[rgba(0,0,0,0.8)]">
+                                <div className=" h-1/3 w-full bg-[rgba(0,0,0,0.8)] rounded">
                                     <h2 className="text-white pl-2">{article.title}</h2>
                                     <Link className=" text-blue-300 float-right mr-2"><p>Read More →</p></Link>
                                 </div>
@@ -145,8 +145,9 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className=" w-11/12 h-[50%]  ml-8">
-                <div className=" w-full border-b-2 pb-2">
+                <div className=" w-full border-b-2 pb-2 flex justify-between items-center">
                     <h2 className="text-white font-bold text-xl">Tournaments</h2>
+                    <Link to='/allTournaments'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
                 </div>
                 <div className=" w-[95%] h-1/2 mt-4 border-2 flex flex-wrap justify-center cursor-pointer"
                     onClick={() => {
@@ -155,11 +156,11 @@ const Dashboard = () => {
                     }}
                 >
                     <div className=" w-full flex flex-wrap bg-[rgba(0,0,0,0.7)]">
-                        <div className=" w-2/5 bg-[#0000007c] flex flex-wrap items-center">
+                        <div className=" w-2/4 bg-[#0000007c] flex flex-wrap items-center">
                             <h2 className=" w-full text-center text-white text-2xl">{singleTournament.title}</h2>
                             <h4 className=" w-full text-center text-white">{singleTournament.date}</h4>
                         </div>
-                        <div className=" w-3/5 " style={{
+                        <div className=" w-2/4 " style={{
                             backgroundImage: `url(${singleTournament.gameImg})`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'top',
@@ -167,7 +168,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-[95%] h-1/3 mt-2 flex">
+                <div className="w-[95%] h-1/3 mt-2 flex flex-wrap flex-col overflow-x-scroll">
                     {tournaments.map((tournament) => (
                         <div className={'flex flex-wrap w-64 h-full mr-6 border-2 border-white cursor-pointer'} onClick={() => {
                             togglePopup()
