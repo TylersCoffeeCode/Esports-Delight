@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const Nav = () => {
   return (
-    <nav className="w-full h-16 flex flex-wrap bg-gradient-to-r hidden from-[rgb(10,10,10)] to-[rgb(1,126,255)] fixed z-10">
+    <nav className="w-full h-16 flex flex-wrap bg-gradient-to-r from-[rgb(10,10,10)] to-[rgb(1,126,255)] fixed z-10">
       <div className="w-1/3 flex justify-start">
         <div className="w-24 flex justify-center items-center">
           <Link to='/'><h1 className='text-white text-4xl'>GD</h1></Link>

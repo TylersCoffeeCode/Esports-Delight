@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
       })
 
       Tournaments.belongsToMany(models.Teams, {
-        through: 'TournamentTeams'
+        through: 'tournamentTeam',
+        foreignKey: 'tournamentId'
       })
     }
   }

@@ -1,6 +1,8 @@
+const { where } = require('sequelize')
 const { Tournaments } = require('../models')
 const { Teams } = require('../models')
 const { Users } = require('../models')
+const { TournamentTeams } = require('../models')
 
 
 const GetTournaments = async (req, res) => {
@@ -11,10 +13,9 @@ const GetTournaments = async (req, res) => {
         throw error
     }
 }
-
 const GetTournamentById = async (req, res) => {
     try {
-        const tournament = await Tournaments.findByPk(req.body.id)
+        const tournament = await Tournaments.findByPk(req.params.id)
         if (tournament) {
             return res.status(200).json({ tournament })
         }
@@ -24,13 +25,30 @@ const GetTournamentById = async (req, res) => {
     }
 }
 
+const getTeamList = async (req, res) => {
+    try {
+        const list = await Teams.findAll({
+            include: [
+                {
+                    model: Tournaments,
+                    through: 'tournamentTeam'
+                }
+            ]
+        })
+        return res.status(200).json({ list })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
 
 const createTournament = async (req, res) => {
-    const { title, date, content, gameImg, userId } = req.body;
+    const { title, date, content, gameImg, userId } = req.body
     try {
-        const user = await Users.findOne({ where: { id: userId } });
+        const user = await Users.findOne({ where: { id: userId } })
         if (!user) {
-            return res.status(404).json({ error: 'User not found' });
+            return res.status(404).json({ error: 'User not found' })
         }
         const tournament = await Tournaments.create({
             title,
@@ -38,16 +56,33 @@ const createTournament = async (req, res) => {
             content,
             gameImg,
             userId,
-        });
-        return res.status(201).json(tournament);
+        })
+        const team = await Teams.findByPk(3)
+        tournament.addTeam(team)
+        return res.status(201).json(team)
     } catch (err) {
         console.log(err);
-        return res.status(500).json({ error: 'Error' });
+        return res.status(500).json({ error: 'Error' })
     }
-};
+}
+
+const findTeams = async (req, res) => {
+    try {
+        console.log('HELLO DDR');
+        const tTeams = await TournamentTeams.findAll({ where: { tournamentId: 6 } })
+        return res.status(200).json(tTeams);
+    } catch (error) {
+        return res.status(500).json({ error: 'Error' })
+    }
+}
+
+
+
 
 module.exports = {
     GetTournaments,
     GetTournamentById,
-    createTournament
+    createTournament,
+    getTeamList,
+    findTeams
 }

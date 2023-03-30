@@ -58,7 +58,7 @@ const Dashboard = () => {
     return (
         <div className=" bg-[#0B0C13] w-full h-[100vh] flex flex-wrap items-start">
             {selectedTab === 1 && showPopup && (
-                <div className="popup absolute w-11/12 h-[91%] bg-[rgb(0,32,63)] m-auto left-0 right-0 bottom-[5%] flex flex-wrap justify-center items-center text-center border-black border-2 rounded-2xl">
+                <div className="popup absolute w-4/5 h-[86%] bg-[rgb(0,32,63)] m-auto left-0 right-0 bottom-[5%] flex flex-wrap justify-center items-center text-center border-black border-2 rounded-2xl">
                     <div className=" h-full flex flex-wrap justify-center w-full">
                         <div className="flex flex-wrap w-3/4">
                             <ul className="flex flex-wrap w-full justify-between pt-4">
@@ -67,15 +67,17 @@ const Dashboard = () => {
                                 <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={() => handleTabs(3)}>Info</li>
                             </ul>
                         </div>
+                        <div className="w-full flex justify-center">
+                            <img src={selectedTournament.gameImg} alt="" className=" h-2/3 w-3/5" />
+                        </div>
                         <p className="w-full text-white text-2xl">{selectedTournament.title}</p>
                         <p className="w-full text-white">{selectedTournament.date}</p>
-                        <img src={selectedTournament.gameImg} alt="" className=" h-2/3" />
                         <button onClick={() => setShowPopup(false)} className=" bg-orange-400 text-white w-2/4 h-8">Close</button>
                     </div>
                 </div>
             )}
             {selectedTab === 2 && showPopup && (
-                <div className="popup absolute w-11/12 h-[91%] bg-[rgb(0,32,63)] m-auto left-0 right-0 bottom-[5%] flex flex-wrap justify-center items-center text-center border-black border-2 rounded-2xl">
+                <div className="popup absolute w-4/5 h-[86%] bg-[rgb(0,32,63)] m-auto left-0 right-0 bottom-[5%] flex flex-wrap justify-center items-center text-center border-black border-2 rounded-2xl">
                     <div className=" h-full flex flex-wrap justify-center w-full">
                         <div className="flex flex-wrap w-3/4">
                             <ul className="flex flex-wrap w-full justify-between pt-4">
@@ -91,7 +93,7 @@ const Dashboard = () => {
                 </div>
             )}
             {selectedTab === 3 && showPopup && (
-                <div className="popup absolute w-11/12 h-[91%] bg-[rgb(0,32,63)] m-auto left-0 right-0 bottom-[5%] flex flex-wrap justify-center items-center text-center border-black border-2 rounded-2xl">
+                <div className="popup absolute w-4/5 h-[86%] bg-[rgb(0,32,63)] m-auto left-0 right-0 bottom-[5%] flex flex-wrap justify-center items-center text-center border-black border-2 rounded-2xl">
                     <div className=" h-full flex flex-wrap justify-center w-full">
                         <div className="flex flex-wrap w-3/4">
                             <ul className="flex flex-wrap w-full justify-between pt-4">

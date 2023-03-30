@@ -16,7 +16,31 @@ module.exports = {
       title: 'LPL Spring 2023',
       date: '04-27-2023',
       content: "League of Legends LPL tournament series hosted in China",
-      gameImg: 'https://static.invenglobal.com/upload/image/2020/02/28/i1582863333357496.png',
+      gameImg: 'https://cdn1.epicgames.com/offer/24b9b5e323bc40eea252a10cdd3b2f10/LOL_2560x1440-98749e0d718e82d27a084941939bc9d3',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      userId: 120,
+      title: 'ESL Challenger Melbourne',
+      date: '04-27-2023',
+      content: "League of Legends LPL tournament series hosted in China",
+      gameImg: 'https://assets.tentonhammer.com/articles/attached_images/000/027/603/medium/1200CSGO.jpg',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      userId: 120,
+      title: 'LCS 2023',
+      date: '04-27-2023',
+      content: "League of Legends LPL tournament series hosted in China",
+      gameImg: 'https://cdn1.epicgames.com/offer/24b9b5e323bc40eea252a10cdd3b2f10/LOL_2560x1440-98749e0d718e82d27a084941939bc9d3',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      userId: 120,
+      title: 'TEKKEN WORLD TOUR 2023',
+      date: '04-27-2023',
+      content: "League of Legends LPL tournament series hosted in China",
+      gameImg: 'https://cdn-ext.fanatical.com/production/product/1280x720/753730bd-7ba2-479c-bfdf-bac31b72ebea.jpeg',
       createdAt: new Date(),
       updatedAt: new Date()
     }]

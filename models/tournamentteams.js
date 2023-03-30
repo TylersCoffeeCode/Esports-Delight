@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   TournamentTeams.init({
     tournamentId: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'tournament',
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     teamId: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'team',

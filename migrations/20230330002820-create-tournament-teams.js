@@ -10,11 +10,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       tournamentId: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       teamId: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       createdAt: {
