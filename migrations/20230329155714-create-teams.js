@@ -2,34 +2,18 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('tournament', {
+    await queryInterface.createTable('team', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'user',
-          key: 'id'
-        }
-      },
-      title: {
+      teamName: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      date: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      content: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      gameImg: {
+      teamLogo: {
         type: Sequelize.STRING,
         allowNull: false
       },
@@ -44,6 +28,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('tournament');
+    await queryInterface.dropTable('team');
   }
 };

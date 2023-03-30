@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, Sequelize
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Tournaments extends Model {
@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
       Tournaments.belongsTo(models.Users, {
         foreignKey: 'userId',
         as: 'tournamentCreator'
+      })
+
+      Tournaments.belongsToMany(models.Teams, {
+        through: 'TournamentTeams'
       })
     }
   }
@@ -29,22 +33,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     content: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    teamOne: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    teamOneImage: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    teamTwo: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    teamTwoImage: {
       type: DataTypes.STRING,
       allowNull: false
     },
