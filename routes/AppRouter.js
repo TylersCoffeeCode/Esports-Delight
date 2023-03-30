@@ -11,7 +11,7 @@ const TeamRouter = require('./TeamRouter')
 Router.use('/users', UserRouter)
 Router.use('/tournaments', TournamentRouter)
 Router.use('/articles', ArticleRouter)
-Router.use('/team', TeamRouter)
+Router.use('/teams', TeamRouter)
 
 
 

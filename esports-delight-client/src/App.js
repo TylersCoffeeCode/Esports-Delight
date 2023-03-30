@@ -5,6 +5,7 @@ import Nav from './components/Nav/Nav';
 import Dashboard from './components/Dashboard/Dashboard';
 import NewsPage from './pages/NewsPage';
 import TournamentsPage from './pages/TournamentsPage';
+import { Teams } from './pages/Teams';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Dashboard />} />
         <Route path='/allNews' element={<NewsPage />} />
         <Route path='/allTournaments' element={<TournamentsPage />} />
+        <Route path='/allTeams' element={<Teams />} />
       </Routes>
     </div>
   );
