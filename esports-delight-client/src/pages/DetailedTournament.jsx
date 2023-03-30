@@ -8,19 +8,22 @@ const DetailedTournament = () => {
     const {id} = useParams()
 
     const [tournaments, setTournaments] = useState([])
+    const [teams, setTeams] = useState([])
 
     const getTournaments = async () => {
         const res = await axios.get(`http://localhost:3001/api/tournaments/id/${id}`)
-        console.log(res.data);
         setTournaments(res.data.tournament)
     }
 
     const getTeamByTournaments = async () => {
-        const res = await axios.get(``)
+        const res = await axios.get(`http://localhost:3001/api/tournaments/team/all/${id}`)
+        console.log(res.data)
+        setTeams(res.data)
     }
 
     useEffect(() => {
         getTournaments()
+        getTeamByTournaments()
     }, [])
 
 
@@ -35,7 +38,12 @@ const DetailedTournament = () => {
                     <h2 className=" text-center">{tournaments.content}</h2>
                 </div>
                 <div className="bg-slate-400 h-[250px] ml-10 w-2/3">
-
+                    {teams.map((team) => (
+                        <div>
+                            <img src={team.teamList.teamLogo} alt="" className="w-16 h-16"/>
+                            <h3>{team.teamList.teamName}</h3>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
