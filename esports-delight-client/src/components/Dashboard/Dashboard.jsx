@@ -125,7 +125,7 @@ const Dashboard = () => {
                     {articles.map((article) => (
                         <div className=" w-[47%] h-[48.5%] rounded-md flex items-end"
                             style={{
-                                backgroundImage: `url(${singleArticle.image})`,
+                                backgroundImage: `url(${article.image})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center'
                             }}>

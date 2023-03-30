@@ -11,6 +11,14 @@ module.exports = {
       gameImg: 'https://cdn.cloudflare.steamstatic.com/steam/apps/570/capsule_616x353.jpg?t=1678300512',
       createdAt: new Date(),
       updatedAt: new Date()
+    },{
+      userId: 120,
+      title: 'LPL Spring 2023',
+      date: '04-27-2023',
+      content: "League of Legends LPL tournament series hosted in China",
+      gameImg: 'https://static.invenglobal.com/upload/image/2020/02/28/i1582863333357496.png',
+      createdAt: new Date(),
+      updatedAt: new Date()
     }]
     await queryInterface.bulkInsert('tournament', seededTournaments)
 
