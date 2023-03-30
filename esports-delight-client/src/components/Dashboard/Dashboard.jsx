@@ -62,15 +62,15 @@ const Dashboard = () => {
                     <div className=" h-full flex flex-wrap justify-center w-full">
                         <div className="flex flex-wrap w-3/4">
                             <ul className="flex flex-wrap w-full justify-between pt-4">
-                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(1)}>Overview</li>
-                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(2)}>Teams</li>
-                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(3)}>Info</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={() => handleTabs(1)}>Overview</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={() => handleTabs(2)}>Teams</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={() => handleTabs(3)}>Info</li>
                             </ul>
                         </div>
                         <p className="w-full text-white text-2xl">{selectedTournament.title}</p>
                         <p className="w-full text-white">{selectedTournament.date}</p>
-                        <img src={selectedTournament.gameImg} alt="" className="w-full h-2/3" />
-                        <button onClick={() => setShowPopup(false)} className=" bg-orange-400 w-32 h-8">Close</button>
+                        <img src={selectedTournament.gameImg} alt="" className=" h-2/3" />
+                        <button onClick={() => setShowPopup(false)} className=" bg-orange-400 text-white w-2/4 h-8">Close</button>
                     </div>
                 </div>
             )}
@@ -79,14 +79,14 @@ const Dashboard = () => {
                     <div className=" h-full flex flex-wrap justify-center w-full">
                         <div className="flex flex-wrap w-3/4">
                             <ul className="flex flex-wrap w-full justify-between pt-4">
-                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(1)}>Overview</li>
-                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(2)}>Teams</li>
-                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(3)}>Info</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={() => handleTabs(1)}>Overview</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={() => handleTabs(2)}>Teams</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={() => handleTabs(3)}>Info</li>
                             </ul>
                         </div>
                         <p className="w-full text-white text-2xl">Team Array goes here</p>
                         <p className="w-full text-white"></p>
-                        <button onClick={() => setShowPopup(false)} className=" bg-orange-400 w-32 h-8">Close</button>
+                        <button onClick={() => setShowPopup(false)} className=" bg-orange-400 text-white w-2/4 h-8">Close</button>
                     </div>
                 </div>
             )}
@@ -95,46 +95,50 @@ const Dashboard = () => {
                     <div className=" h-full flex flex-wrap justify-center w-full">
                         <div className="flex flex-wrap w-3/4">
                             <ul className="flex flex-wrap w-full justify-between pt-4">
-                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(1)}>Overview</li>
-                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(2)}>Teams</li>
-                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={()=> handleTabs(3)}>Info</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={() => handleTabs(1)}>Overview</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={() => handleTabs(2)}>Teams</li>
+                                <li className=" bg-[rgb(17,97,176)] w-1/4 h-8 pt-1 text-white hover:shadow-lg hover:shadow-black cursor-pointer" onClick={() => handleTabs(3)}>Info</li>
                             </ul>
                         </div>
                         <p className="w-full text-white text-2xl">{selectedTournament.content}</p>
                         <p className="w-full text-white"></p>
-                        <button onClick={() => setShowPopup(false)} className=" bg-orange-400 w-32 h-8">Close</button>
+                        <button onClick={() => setShowPopup(false)} className=" bg-orange-400 text-white w-2/4 h-8">Close</button>
                     </div>
                 </div>
             )}
             <div className="w-11/12 h-[40%] ml-8 mt-[5rem] flex flex-wrap">
-                <div className=" w-full border-b-2 pb-2">
+                <div className=" w-full border-b-2 pb-2 flex justify-between items-center">
                     <h2 className="text-white font-bold text-xl">News</h2>
+                    <Link to='/allNews'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
                 </div>
-                <div className="flex w-5/12 h-5/6 mt-4 rounded items-end"
-                    style={{
-                        backgroundImage: `url(${singleArticle.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                    }}>
-                    <div className=" w-full h-1/4 bg-[rgba(0,0,0,0.8)]">
-                        <h1 className="text-white pl-2 mb-4">{singleArticle.title}</h1>
-                        <Link className=" text-blue-300 float-right mr-2"><p>Read More →</p></Link>
+                <Link className="flex flex-wrap w-5/12 h-5/6">
+                    <div className="flex w-full h-full mt-4 rounded items-end"
+                        style={{
+                            backgroundImage: `url(${singleArticle.image})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center'
+                        }}>
+                        <div className=" w-full h-1/4 bg-[rgba(0,0,0,0.8)]">
+                            <h1 className="text-white pl-2 mb-4">{singleArticle.title}</h1>
+                            <Link className=" text-blue-300 float-right mr-2"><p>Read More →</p></Link>
+                        </div>
                     </div>
-                </div>
+                </Link>
                 <div className="flex flex-wrap w-[58%] mt-4 h-5/6 justify-around content-between">
                     {articles.map((article) => (
-                        <div className=" w-[47%] h-[48.5%] rounded-md flex items-end"
-                            style={{
-                                backgroundImage: `url(${article.image})`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center'
-                            }}>
-                            <div className=" h-1/3 w-full bg-[rgba(0,0,0,0.8)]">
-                                <h2 className="text-white pl-2">{article.title}</h2>
-                                <Link className=" text-blue-300 float-right mr-2"><p>Read More →</p></Link>
+                        <Link className="w-[47%] h-[48.5%] flex items-end">
+                            <div className=" w-full h-full rounded-md flex items-end"
+                                style={{
+                                    backgroundImage: `url(${article.image})`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center'
+                                }}>
+                                <div className=" h-1/3 w-full bg-[rgba(0,0,0,0.8)]">
+                                    <h2 className="text-white pl-2">{article.title}</h2>
+                                    <Link className=" text-blue-300 float-right mr-2"><p>Read More →</p></Link>
+                                </div>
                             </div>
-
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
@@ -147,7 +151,7 @@ const Dashboard = () => {
                         togglePopup()
                         setSelectedTournament(singleTournament)
                     }}
-                    >
+                >
                     <div className=" w-full flex flex-wrap bg-[rgba(0,0,0,0.7)]">
                         <div className=" w-2/5 bg-[#0000007c] flex flex-wrap items-center">
                             <h2 className=" w-full text-center text-white text-2xl">{singleTournament.title}</h2>
@@ -168,10 +172,8 @@ const Dashboard = () => {
                             setSelectedTournament(tournament)
                         }}
                             style={{ backgroundImage: `url(${tournament.gameImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                            <div className="w-full flex flex-wrap justify-center bg-[rgba(0,0,0,0.5)] items-center">
+                            <div className="w-full flex flex-wrap justify-center bg-[rgba(0,0,0,0.7)] items-center">
                                 <h1 className="w-full text-center text-white">{tournament.title}</h1>
-                                <img src={tournament.teamOneImage} alt="" className=" w-1/2 h-8 object-contain" />
-                                <img src={tournament.teamTwoImage} alt="" className=" w-1/2 h-8 object-contain" />
                                 <h3 className="text-white">{tournament.date}</h3>
                             </div>
                         </div>
