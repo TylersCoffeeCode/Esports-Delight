@@ -7,6 +7,7 @@ import NewsPage from './pages/NewsPage';
 import TournamentsPage from './pages/TournamentsPage';
 import { Teams } from './pages/Teams';
 import DetailedTournament from './pages/DetailedTournament';
+import Account from './pages/Account';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/allTournaments' element={<TournamentsPage />} />
         <Route path='/allTeams' element={<Teams />} />
         <Route path='/TournamentDetails/:id' element={<DetailedTournament />} />
+        <Route path='/Account' element={<Account />} />
       </Routes>
     </div>
   );

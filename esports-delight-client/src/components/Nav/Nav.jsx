@@ -21,7 +21,7 @@ const Nav = () => {
         </div>
         <div className='w-2/4 h-full flex items-center justify-end'>
           <div className='flex h-3/4 items-center border-l-2'>
-            <Link className='ml-6 mr-6 text-white'>👤</Link>
+            <Link to='/Account' className='ml-6 mr-6 text-white'>👤</Link>
             <Link className='mr-6 text-white'>⚙️</Link>
           </div>
         </div>
