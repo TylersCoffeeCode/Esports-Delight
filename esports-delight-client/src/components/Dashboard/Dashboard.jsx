@@ -54,6 +54,9 @@ const Dashboard = () => {
         grabArticles()
     }, [])
 
+    console.log(singleArticle);
+
+
 
     return (
         <div className=" bg-[#0B0C13] w-full h-[100vh] flex flex-wrap items-start">
