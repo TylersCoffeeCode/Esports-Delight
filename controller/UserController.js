@@ -1,5 +1,5 @@
 const { Users } = require('../models')
-const middleware = require('../middleware')
+const middleware = require('../middleware/index')
 
 const FindUsers = async (req, res) => {
     try {
@@ -34,19 +34,25 @@ const Register = async (req, res) => {
 
 const Login = async (req, res) => {
     try {
-        const { userName, password } = req.body
+        const { userData } = req.body;
+        console.log(userData.userName, 'user');
+        console.log(userData.password, 'password');
         const user = await Users.findOne({
-            where: { userName: userName },
+            where: { userName: userData.userName },
             raw: true
         })
+        console.log(user);
+        console.log(user.password);
+        console.log(userData.password);
         let matched = await middleware.comparePassword(
             user.password,
-            password
+            userData.password
         )
+        console.log(user.password, userData.password);
         if (matched) {
             let payload = {
                 id: user.id,
-                email: user.email
+                userName: user.UserName
             }
             let token = middleware.createToken(payload)
             return res.send({ user: payload, token })

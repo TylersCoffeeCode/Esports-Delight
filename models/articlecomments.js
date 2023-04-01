@@ -7,12 +7,16 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       ArticleComments.belongsTo(models.Users, {
         foreignKey: 'userId',
-        as: 'commentAuthor'
+        as: 'commentAuthor',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
 
       ArticleComments.belongsTo(models.Articles, {
         foreignKey: 'articleId',
-        as: 'commentedArticle'
+        as: 'commentedArticle',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
     }
   }

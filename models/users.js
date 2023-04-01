@@ -7,27 +7,37 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Users.hasMany(models.Tournaments, {
         foreignKey: 'userId',
-        as: 'tournaments'
+        as: 'tournaments',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
 
       Users.hasMany(models.Articles, {
         foreignKey: 'userId',
-        as: 'articles'
+        as: 'articles',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
 
       Users.hasMany(models.ArticleComments, {
         foreignKey: 'userId',
-        as: 'articleComments'
+        as: 'articleComments',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
 
       Users.hasMany(models.Posts, {
         foreignKey: 'userId',
-        as: 'posts'
+        as: 'posts',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
 
       Users.hasMany(models.PostComments, {
         foreignKey: 'userId',
-        as: 'postComments'
+        as: 'postComments',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
     }
   }

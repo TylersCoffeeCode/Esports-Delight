@@ -7,12 +7,16 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Tournaments.belongsTo(models.Users, {
         foreignKey: 'userId',
-        as: 'tournamentCreator'
+        as: 'tournamentCreator',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
 
       Tournaments.belongsToMany(models.Teams, {
         through: 'tournamentTeam',
-        foreignKey: 'tournamentId'
+        foreignKey: 'tournamentId',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
     }
   }

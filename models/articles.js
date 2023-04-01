@@ -8,7 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Articles.belongsTo(models.Users, {
         foreignKey: 'userId',
-        as: 'articleAuthor'
+        as: 'articleAuthor',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
     }
   }
@@ -18,7 +20,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       references: {
         model: 'user',
-        key: 'id'
+        key: 'id',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       }
     },
     title: {

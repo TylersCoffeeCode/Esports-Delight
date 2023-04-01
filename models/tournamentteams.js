@@ -8,7 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       TournamentTeams.belongsTo(models.Teams, {
         foreignKey: 'teamId',
-        as: 'teamList'
+        as: 'teamList',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
     }
   }
