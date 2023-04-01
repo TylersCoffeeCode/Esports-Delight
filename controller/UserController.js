@@ -22,10 +22,10 @@ const FindUserById = async (req, res) => {
 
 const Register = async (req, res) => {
     try {
-        const { email, password, userName } = req.body
-        console.log(email)
-        let passwordDigest = await middleware.hashPassword(password)
-        const user = await Users.create({ email, password: passwordDigest, userName })
+        const { userData } = req.body
+        console.log(userData.email)
+        let passwordDigest = await middleware.hashPassword(userData.password)
+        const user = await Users.create({ email: userData.email, password: passwordDigest, userName: userData.userName })
         res.send(user)
     } catch (error) {
         throw error

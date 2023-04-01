@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link } from "react-router-dom"
+import LoginComponent from "../components/LoginComponent"
+import RegisterComponent from "../components/RegisterComponent"
 
 
 const Account = () => {
 
     const initialState = {
         userName: '',
+        email: '',
         password: '',
     }
 
@@ -15,7 +18,7 @@ const Account = () => {
     const handleChange = (e) => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value })
     }
-    const [isSignUp, setIsSignUp] = useState(false)
+    const [isSignUp, setIsSignUp] = useState(true)
 
     const toggleSignUp = () => {
         setIsSignUp(!isSignUp)
@@ -32,55 +35,9 @@ const Account = () => {
     }
 
     return (
-        <div className="bg-[#000000] w-full h-[100vh] flex flex-wrap items-center justify-center">
-            <div className="bg-white w-3/4 h-4/5 flex justify-end mt-8">
-                <div className="bg-white w-2/4 h-full flex flex-wrap items-center">
-                    <div className="w-4/5 h-8 flex ml-2">
-                        <h1 className="text-xl">Gamer's Delight</h1>
-                    </div>
-                    <div className="w-full h-3/4 flex flex-wrap justify-center content-center">
-                        <h1 className="w-full text-center text-3xl">{isSignUp ? 'Create Account' : 'Welcome Back!'}</h1>
-                        <h2 className="w-full text-center">{isSignUp ? 'Create a new account' : 'Your gateway into E-sports'}</h2>
-                        <form className="w-1/2 flex flex-wrap mt-4" onSubmit={onSubmit}>
-                            <label htmlFor="username" className="w-full text-lg">Username</label>
-                            <input
-                                name="userName"
-                                type="username"
-                                placeholder="Enter username"
-                                required
-                                className="w-full mb-6 p-2 border-2 border-gray-400"
-                                onChange={handleChange}
-                                value={formValues.userName}
-                            />
-                            <label htmlFor="Password" className="w-full text-lg">Password</label>
-                            <input
-                                name="password"
-                                type="password"
-                                placeholder="Enter password"
-                                required
-                                className="w-full mb-8 p-2 border-2 border-gray-400"
-                                onChange={handleChange}
-                                value={formValues.password}
-                            />
-                            <button className="bg-slate-400 w-full p-2 text-white cursor-pointer">
-                                {isSignUp ? 'Create Account' : 'Sign In'}
-                            </button>
-                        </form>
-                    </div>
-                    <div className="w-full h-8 flex justify-center">
-                        <h3>
-                            {isSignUp ? "Already have an account?" : "Don't have an account?"}{' '}
-                            <span className="cursor-pointer underline font-bold" onClick={toggleSignUp}>
-                                {isSignUp ? 'Sign In' : 'Sign Up'}
-                            </span>
-                        </h3>
-                    </div>
-                </div>
-                <div className=" bg-black w-2/4 h-full bg-cover bg-center bg-[url(https://s3-eu-central-1.amazonaws.com/www-staging.esports.com/WP%20Media%20Folder%20-%20esports-com//var/app/current/web/app/uploads/2020/05/48581371966_876a4f4054_k.jpg)]">
-
-                </div>
-            </div>
-        </div>
+        <>
+        {isSignUp ? <LoginComponent toggleSignUp={toggleSignUp}/> : <RegisterComponent toggleSignUp={toggleSignUp}/> }
+        </>
     )
 }
 export default Account
