@@ -28,22 +28,27 @@ const DetailedTournament = () => {
 
 
     return (
-        <div className="bg-[#000000] w-full h-[100vh] flex flex-wrap items-start justify-center">
-            <div className=" w-full h-5/6 mt-[6rem] flex flex-wrap bg-[rgb(0,31,63)] items-start rounded-lg justify-between">
-                <div className=" bg-black w-[400px] h-[400px] ml-4 mt-4">
-                    <img className=" w-full h-full object-contain" src={tournaments.gameImg} alt="" />
+        <div className="bg-[rgb(0,31,63)] w-full h-[100vh] flex flex-wrap items-start">
+            <div className=" w-full h-full flex flex-wrap bg-[rgb(0,31,63)] content-between justify-between">
+                <div className=" bg-black w-2/5 h-2/5 mt-32 rounded-r-full overflow-hidden">
+                    <img className=" w-full h-full object-cover" src={tournaments.gameImg} alt="" />
                 </div>
-                <div className=" bg-slate-400 w-2/5 h-2/3 mt-4 mr-8 flex flex-wrap justify-center content-start">
+                <div className=" bg-[rgb(33,129,226)] text-white w-1/2 mr-8 h-2/3 mt-32 flex flex-wrap justify-center content-start rounded-xl">
                     <h1 className="  text-center text-3xl mt-8 mb-8 w-full">{tournaments.title}</h1>
                     <h2 className=" text-center w-4/5">{tournaments.content}</h2>
                 </div>
-                <div className="bg-slate-400 h-[250px] ml-10 w-2/3 flex flex-wrap justify-around items-center">
+                <div className="bg-[rgb(33,129,226)] h-1/6 w-5/6 flex flex-wrap justify-around items-start rounded-br-full">
+                    <div className="h-full flex items-center text-white">
+                    <h4 className=" -rotate-90 text-3xl">Teams</h4>
+                    </div>
+                    <div className=" w-[80%] h-full flex flex-wrap items-center">
                     {teams.map((team) => (
-                        <div className="flex flex-wrap w-40 h-2/5">
-                            <img src={team.teamList.teamLogo} alt="" className=" object-contain w-full h-16"/>
-                            <h3 className=" w-full text-center">{team.teamList.teamName}</h3>
+                        <div className="flex flex-wrap w-40 h-1/3 mr-8">
+                            <img src={team.teamList.teamLogo} alt="" className=" object-contain w-full h-2/3"/>
+                            <h3 className=" w-full text-center text-white">{team.teamList.teamName}</h3>
                         </div>
                     ))}
+                    </div>
                 </div>
             </div>
         </div>
