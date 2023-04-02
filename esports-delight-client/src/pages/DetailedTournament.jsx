@@ -33,13 +33,14 @@ const DetailedTournament = () => {
                 <div className=" bg-black w-2/5 h-2/5 mt-32 rounded-r-full overflow-hidden">
                     <img className=" w-full h-full object-cover" src={tournaments.gameImg} alt="" />
                 </div>
-                <div className=" bg-[rgb(33,129,226)] text-white w-1/2 mr-8 h-2/3 mt-32 flex flex-wrap justify-center content-start rounded-xl">
-                    <h1 className="  text-center text-3xl mt-8 mb-8 w-full">{tournaments.title}</h1>
+                <div className=" bg-[rgb(33,129,226)] text-white w-1/2 mr-8 h-2/3 mt-32 flex flex-wrap justify-center content-start rounded-xl overflow-y-scroll">
+                    <h1 className="  text-center text-3xl mt-8 mb-4 w-full font-bold">{tournaments.title}</h1>
+                    <h2 className="  text-center text-xl w-full mb-2">{tournaments.date}</h2>
                     <h2 className=" text-center w-4/5">{tournaments.content}</h2>
                 </div>
                 <div className="bg-[rgb(33,129,226)] h-1/6 w-5/6 flex flex-wrap justify-around items-start rounded-br-full">
                     <div className="h-full flex items-center text-white">
-                    <h4 className=" -rotate-90 text-3xl">Teams</h4>
+                    <h4 className=" -rotate-90 text-3xl font-bold">Teams</h4>
                     </div>
                     <div className=" w-[80%] h-full flex flex-wrap items-center">
                     {teams.map((team) => (

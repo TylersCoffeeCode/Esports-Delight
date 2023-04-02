@@ -11,7 +11,8 @@ const GetArticle = async(req,res) => {
 
 const GetArticleById = async (req,res) => {
     try {
-        const article = await Articles.findByPk(req.body.id)
+        const { id } = req.params
+        const article = await Articles.findByPk(id)
         if (article) {
             return res.status(200).json({article})
         }

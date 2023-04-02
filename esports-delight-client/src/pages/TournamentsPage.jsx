@@ -24,7 +24,7 @@ const TournamentsPage = () => {
             </video>
             <div className=" w-1/3 h-5/6 mt-[6rem] flex flex-wrap bg-[rgb(0,31,63)] items-start justify-center rounded-lg fixed">
                 <div className="w-full h-8 text-2xl text-white flex justify-center mt-4">
-                    <h1>Tournaments</h1>
+                    <h1 className=' font-bold'>Tournaments</h1>
                 </div>
                 <div className=" bg-[rgba(19,49,79,0.44)] w-[95%] h-5/6 border-2 border-black flex flex-wrap justify-center items-start content-start">
                     {tournaments.map((tournament) => (
