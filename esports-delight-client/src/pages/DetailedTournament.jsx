@@ -34,14 +34,14 @@ const DetailedTournament = () => {
                     <img className=" w-full h-full object-contain" src={tournaments.gameImg} alt="" />
                 </div>
                 <div className=" bg-slate-400 w-2/5 h-2/3 mt-4 mr-8 flex flex-wrap justify-center content-start">
-                    <h1 className="  text-center text-3xl mt-8 mb-8">{tournaments.title}</h1>
-                    <h2 className=" text-center">{tournaments.content}</h2>
+                    <h1 className="  text-center text-3xl mt-8 mb-8 w-full">{tournaments.title}</h1>
+                    <h2 className=" text-center w-4/5">{tournaments.content}</h2>
                 </div>
-                <div className="bg-slate-400 h-[250px] ml-10 w-2/3">
+                <div className="bg-slate-400 h-[250px] ml-10 w-2/3 flex flex-wrap justify-around items-center">
                     {teams.map((team) => (
-                        <div>
-                            <img src={team.teamList.teamLogo} alt="" className="w-16 h-16"/>
-                            <h3>{team.teamList.teamName}</h3>
+                        <div className="flex flex-wrap w-40 h-2/5">
+                            <img src={team.teamList.teamLogo} alt="" className=" object-contain w-full h-16"/>
+                            <h3 className=" w-full text-center">{team.teamList.teamName}</h3>
                         </div>
                     ))}
                 </div>
