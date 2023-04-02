@@ -11,7 +11,7 @@ const Nav = () => {
           <Link to='/allTournaments' className=' text-white'>Tournaments</Link>
           <Link to='/allNews' className=' text-white'>Articles</Link>
           <Link to='/allTeams' className=' text-white'>Teams</Link>
-          <Link to='/allTournaments' className=' text-white'>Posts</Link>
+          <Link to='/posts' className=' text-white'>Posts</Link>
         </div>
       </div>
       <div className="navRight w-2/3 flex items-center justify-between">

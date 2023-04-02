@@ -9,6 +9,7 @@ import { Teams } from './pages/Teams';
 import DetailedTournament from './pages/DetailedTournament';
 import Account from './pages/Account';
 import DetailedArticle from './pages/DetailedArticle';
+import PostPage from './pages/PostPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/TournamentDetails/:id' element={<DetailedTournament />} />
         <Route path='/Account' element={<Account />} />
         <Route path='/article/:id' element={<DetailedArticle />} />
+        <Route path='/posts' element={<PostPage />} />
       </Routes>
     </div>
   );

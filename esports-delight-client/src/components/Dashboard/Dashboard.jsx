@@ -42,9 +42,6 @@ const Dashboard = () => {
         setShowPopup(!showPopup)
     }
 
-    const handleTabs = (e) => {
-        setSelectedTab(e)
-    }
 
 
     useEffect(() => {
