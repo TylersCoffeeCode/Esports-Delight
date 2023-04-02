@@ -22,8 +22,8 @@ const Dashboard = () => {
 
     const grabTournamentOne = async () => {
         const res = await axios.get('http://localhost:3001/api/tournaments/')
-        console.log(res.data[2]);
-        setSingleTournament(res.data[1])
+        console.log(res.data[1]);
+        setSingleTournament(res.data[0])
     }
 
     const grabArticleOne = async () => {
@@ -130,7 +130,7 @@ const Dashboard = () => {
                     </div>
                 </Link>
                 <div className="flex flex-wrap w-[58%] mt-4 h-5/6 justify-around content-between">
-                    {articles.map((article) => (
+                    {articles.slice(1,5).map((article) => (
                         <Link className="w-[47%] h-[48.5%] flex items-end">
                             <div className=" w-full h-full rounded-md flex items-end"
                                 style={{
@@ -172,7 +172,7 @@ const Dashboard = () => {
                     </div>
                 </div>
                 <div className="w-[95%] h-1/3 mt-2 flex flex-wrap flex-col overflow-x-scroll">
-                    {tournaments.map((tournament) => (
+                    {tournaments.slice(1).map((tournament) => (
                         <div className={'flex flex-wrap w-64 h-full mr-6 border-2 border-white cursor-pointer'} onClick={() => {
                             togglePopup()
                             setSelectedTournament(tournament)
