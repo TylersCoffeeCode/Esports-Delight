@@ -20,7 +20,7 @@ function App() {
 
   const CheckSession = async () => {
     try {
-      const res = await Client.get('/user/session')
+      const res = await Client.get('/users/session')
       return res.data
     } catch (error) {
       throw error
@@ -44,15 +44,16 @@ function App() {
     <div className='app'>
       <Nav />
       <Routes>
-        <Route path='/' element={<Dashboard />} />
-        <Route path='/allNews' element={<NewsPage />} />
-        <Route path='/allTournaments' element={<TournamentsPage />} />
-        <Route path='/allTeams' element={<Teams />} />
-        <Route path='/TournamentDetails/:id' element={<DetailedTournament />} />
-        <Route path='/Account' element={<Account />} />
-        <Route path='/article/:id' element={<DetailedArticle />} />
-        <Route path='/posts' element={<PostPage />} />
+        <Route path='/' element={<Dashboard user={user} setUser={setUser}/>} />
+        <Route path='/allNews' element={<NewsPage user={user} setUser={setUser}/>} />
+        <Route path='/allTournaments' element={<TournamentsPage user={user} setUser={setUser}/>} />
+        <Route path='/allTeams' element={<Teams user={user} setUser={setUser}/>} />
+        <Route path='/TournamentDetails/:id' element={<DetailedTournament user={user} setUser={setUser}/>} />
+        <Route path='/Account' element={<Account user={user} setUser={setUser}/>} />
+        <Route path='/article/:id' element={<DetailedArticle user={user} setUser={setUser}/>} />
+        <Route path='/posts' element={<PostPage user={user} setUser={setUser}/>} />
         <Route path='/posts/create' element={<CreatePost />} />
+        <Route path='/posts/create/myPosts' element={<CreatePost />} />
       </Routes>
     </div>
   );

@@ -89,11 +89,17 @@ const UpdatePassword = async (req, res) => {
 }
 
 
+const CheckSession = async (req, res) => {
+    const { payload } = res.locals
+    res.send(payload)
+  }
+
 
 module.exports = {
     FindUsers,
     FindUserById,
     Register,
     Login,
-    UpdatePassword
+    UpdatePassword,
+    CheckSession
 }

@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from "react-router-dom"
 
 
-const LoginComponent = ({toggleSignUp}) => {
+const LoginComponent = ({toggleSignUp, setUser}) => {
 
     const initialState = {
         userName: '',
@@ -22,6 +22,9 @@ const LoginComponent = ({toggleSignUp}) => {
             let userData = formValues
             let response = await axios.post('http://localhost:3001/api/users/login', { userData })
             console.log(response);
+            localStorage.setItem('token', response.data.token)
+            localStorage.setItem('user_id', response.data.user.id)
+            setUser(userData)
         } catch (error) {
             console.log(error);
         }

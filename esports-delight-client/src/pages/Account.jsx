@@ -5,7 +5,7 @@ import LoginComponent from "../components/LoginComponent"
 import RegisterComponent from "../components/RegisterComponent"
 
 
-const Account = () => {
+const Account = ({setUser}) => {
 
     const initialState = {
         userName: '',
@@ -36,7 +36,7 @@ const Account = () => {
 
     return (
         <>
-        {isSignUp ? <LoginComponent toggleSignUp={toggleSignUp}/> : <RegisterComponent toggleSignUp={toggleSignUp}/> }
+        {isSignUp ? <LoginComponent toggleSignUp={toggleSignUp} setUser={setUser}/> : <RegisterComponent toggleSignUp={toggleSignUp} setUser={setUser}/> }
         </>
     )
 }

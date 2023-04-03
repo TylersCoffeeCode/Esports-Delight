@@ -39,9 +39,6 @@ const Dashboard = () => {
     }
 
 
-    const togglePopup = () => {
-        setShowPopup(!showPopup)
-    }
 
 
 
@@ -99,24 +96,22 @@ const Dashboard = () => {
                     <h2 className="text-white font-bold text-xl">Tournaments</h2>
                     <Link to='/allTournaments'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
                 </div>
-                <div className=" w-[95%] h-1/2 mt-4 border-2 flex flex-wrap justify-center cursor-pointer"
-                    onClick={() => {
-                        togglePopup()
-                        setSelectedTournament(singleTournament)
-                    }}
-                >
-                    <div className=" w-full flex flex-wrap bg-[rgba(0,0,0,0.7)]">
-                        <div className=" w-2/4 bg-[#0000007c] flex flex-wrap items-center">
-                            <h2 className=" w-full text-center text-white text-2xl">{singleTournament.title}</h2>
-                            <h4 className=" w-full text-center text-white">{singleTournament.date}</h4>
+                <div className=" w-[95%] h-1/2 mt-4 border-2 flex flex-wrap justify-center cursor-pointer">
+                    <Link to={`/TournamentDetails/${singleTournament.id}`} className="w-full h-full">
+                        <div className=" w-full h-full flex flex-wrap bg-[rgba(0,0,0,0.7)]">
+                            <div className=" w-2/4 bg-[#0000007c] flex flex-wrap items-center">
+                                <h2 className=" w-full text-center text-white text-2xl">{singleTournament.title}</h2>
+                                <h4 className=" w-full text-center text-white">{singleTournament.date}</h4>
+                            </div>
+                            <div className=" w-2/4 " style={{
+                                backgroundImage: `url(${singleTournament.gameImg})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'top',
+                            }}>
+                            </div>
                         </div>
-                        <div className=" w-2/4 " style={{
-                            backgroundImage: `url(${singleTournament.gameImg})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'top',
-                        }}>
-                        </div>
-                    </div>
+                    </Link>
+
                 </div>
                 <div className="w-[95%] h-1/3 mt-2 flex flex-wrap flex-col overflow-x-scroll">
                     {tournaments.slice(1).map((tournament) => (
