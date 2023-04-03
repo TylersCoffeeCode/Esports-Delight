@@ -22,15 +22,17 @@ const MyPosts = () => {
 
 
     return (
-        <div className="bg-[rgb(0,31,63)] w-full h-[100vh] flex flex-wrap justify-center items-center">
-            <div className=" bg-red-300">
+        <div className="bg-[rgb(0,31,63)] w-full h-[100vh] flex flex-wrap justify-center items-center content-center">
+            <div className=" bg-red-300 w-2/3 flex justify-center text-2xl text-white">
                 Your Posts
             </div>
-            {posts.map((post)=> (
-                <div>
-                    <h1>{post.content}</h1>
-                </div>
-            ))}
+            <div className=" bg-blue-200 w-2/3">
+                {posts.map((post) => (
+                    <div>
+                        <h1>{post.content}</h1>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
