@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      field: 'userId',
       references: {
         model: 'user',
         key: 'id'
@@ -36,16 +37,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       defaultValue: 0,
       allowNull: false
-    },
-    ownerId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      field: 'userId',
-      onDelete: 'CASCADE',
-      references: {
-        model: 'user',
-        key: 'id'
-      }
     }
   }, {
     sequelize,
