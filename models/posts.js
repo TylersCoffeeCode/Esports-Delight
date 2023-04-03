@@ -17,12 +17,6 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'cascade'
       })
 
-      Posts.belongsTo(models.Users, {
-        foreignKey: 'postId',
-        as: 'commentedPost',
-        onDelete: 'cascade',
-        onUpdate: 'cascade'
-      })
     }
   }
   Posts.init({
@@ -43,6 +37,16 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 0,
       allowNull: false
     },
+    ownerId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      field: 'userId',
+      onDelete: 'CASCADE',
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Posts',
