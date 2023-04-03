@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
+import Client from "../../services/api"
+
 
 
 
@@ -10,7 +12,7 @@ export const Teams = () => {
 
 
     const getTournaments = async () => {
-        const res = await axios.get('http://localhost:3001/api/teams/')
+        const res = await Client.get('http://localhost:3001/api/teams/')
         console.log(res.data);
         setTournaments(res.data)
     }
