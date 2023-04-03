@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom'
+import Client from "../../services/api"
 
 
 const PostPage = ({ user}) => {
@@ -11,7 +12,7 @@ const PostPage = ({ user}) => {
     const [posts, setPosts] = useState([])
 
     const getPosts = async () => {
-        const res = await axios.get('http://localhost:3001/api/posts')
+        const res = await Client.get('http://localhost:3001/api/posts')
         setPosts(res.data)
         console.log(res.data);
     }

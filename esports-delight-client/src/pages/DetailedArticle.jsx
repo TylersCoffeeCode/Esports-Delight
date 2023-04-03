@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link, useParams } from "react-router-dom"
+import Client from "../../services/api"
 
 
 const DetailedArticle = () => {
@@ -10,7 +11,7 @@ const DetailedArticle = () => {
     const [article, setArticle] = useState([])
 
     const grabArticle = async () => {
-        const res = await axios.get(`http://localhost:3001/api/articles/${id}`)
+        const res = await Client.get(`http://localhost:3001/api/articles/${id}`)
         console.log(res.data.article)
         setArticle(res.data.article)
     }

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link } from "react-router-dom"
+import Client from "../../services/api"
+
 
 const RegisterComponent = ({toggleSignUp}) => {
 
@@ -21,7 +23,7 @@ const RegisterComponent = ({toggleSignUp}) => {
         e.preventDefault()
         try {
             let userData = formValues
-            let response = await axios.post('http://localhost:3001/api/users/create', { userData })
+            let response = await Client.post('http://localhost:3001/api/users/create', { userData })
             console.log(response);
         } catch (error) {
             console.log(error);

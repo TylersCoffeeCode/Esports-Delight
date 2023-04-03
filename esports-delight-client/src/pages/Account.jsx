@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Link } from "react-router-dom"
 import LoginComponent from "../components/LoginComponent"
 import RegisterComponent from "../components/RegisterComponent"
+import Client from "../../services/api"
 
 
 const Account = ({setUser}) => {
@@ -27,7 +28,7 @@ const Account = ({setUser}) => {
         e.preventDefault()
         try {
             let userData = formValues
-            let response = await axios.post('http://localhost:3001/api/users/login', { userData })
+            let response = await Client.post('http://localhost:3001/api/users/login', { userData })
             console.log(response);
         } catch (error) {
             console.log(error);

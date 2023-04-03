@@ -2,6 +2,8 @@ import csVideo from '../assests/ESLytube.mp4'
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link } from "react-router-dom"
+import Client from "../../services/api"
+
 
 
 const TournamentsPage = () => {
@@ -9,7 +11,7 @@ const TournamentsPage = () => {
     const [tournaments, setTournaments] = useState([])
 
     const getTournaments = async () => {
-        const res = await axios.get('http://localhost:3001/api/tournaments/')
+        const res = await Client.get('http://localhost:3001/api/tournaments/')
         console.log(res.data);
         setTournaments(res.data)
     }

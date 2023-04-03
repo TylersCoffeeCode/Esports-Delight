@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link } from "react-router-dom"
+import Client from "../../services/api"
+
 
 const NewsPage = () => {
 
@@ -12,13 +14,13 @@ const NewsPage = () => {
 
 
     const getArticles = async () => {
-        const res = await axios.get('http://localhost:3001/api/articles')
+        const res = await Client.get('http://localhost:3001/api/articles')
         setArticles(res.data)
         console.log(res.data);
     }
 
     const getSignleArticle = async () => {
-        const res = await axios.get('http://localhost:3001/api/articles')
+        const res = await Client.get('http://localhost:3001/api/articles')
         setSingleArticle(res.data[0])
     }
 

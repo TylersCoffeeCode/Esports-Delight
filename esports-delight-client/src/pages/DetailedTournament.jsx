@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link, useParams } from "react-router-dom"
+import Client from "../../services/api"
+
 
 
 const DetailedTournament = () => {
@@ -11,12 +13,12 @@ const DetailedTournament = () => {
     const [teams, setTeams] = useState([])
 
     const getTournaments = async () => {
-        const res = await axios.get(`http://localhost:3001/api/tournaments/id/${id}`)
+        const res = await Client.get(`http://localhost:3001/api/tournaments/id/${id}`)
         setTournaments(res.data.tournament)
     }
 
     const getTeamByTournaments = async () => {
-        const res = await axios.get(`http://localhost:3001/api/tournaments/team/all/${id}`)
+        const res = await Client.get(`http://localhost:3001/api/tournaments/team/all/${id}`)
         console.log(res.data)
         setTeams(res.data)
     }

@@ -10,7 +10,7 @@ const MyPosts = () => {
     const [posts, setPosts] = useState([])
 
     const getPosts = async () => {
-        const res = await axios.get(`http://localhost:3001/api/posts/myPosts/${id}`)
+        const res = await Client.get(`http://localhost:3001/api/posts/myPosts/${id}`)
         setPosts(res.data.post)
         console.log(res.data.post);
     }
