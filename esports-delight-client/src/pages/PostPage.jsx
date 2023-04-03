@@ -19,7 +19,10 @@ const PostPage = () => {
 
   return (
     <div className="bg-[rgb(0,31,63)] w-full h-[100vh] flex flex-wrap justify-center items-end">
-        <div className="w-2/4 h-[93%] overflow-y-scroll">
+        <div className="w-full h-8 mt-20 flex justify-center">
+            <Link to='/posts/create'><div className=" bg-white w-[250px] text-center rounded-xl">Create Post</div></Link>
+        </div>
+        <div className="w-2/4 h-[85%] overflow-y-scroll">
             <div className=" w-full">
                 {posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).map((post) => (
                     <div className="bg-[rgb(17,122,227)] text-white w-full h-[550px] mb-8 border-4 border-black rounded-lg overflow-hidden">
