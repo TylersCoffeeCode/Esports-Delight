@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link } from "react-router-dom"
+import Client from "../../services/api"
 
 const Dashboard = () => {
 
@@ -15,25 +16,25 @@ const Dashboard = () => {
 
 
     const getTournaments = async () => {
-        const res = await axios.get('http://localhost:3001/api/tournaments/')
+        const res = await Client.get('/tournaments/')
         console.log(res.data);
         setTournaments(res.data)
     }
 
     const grabTournamentOne = async () => {
-        const res = await axios.get('http://localhost:3001/api/tournaments/')
+        const res = await Client.get('/tournaments/')
         console.log(res.data[1]);
         setSingleTournament(res.data[0])
     }
 
     const grabArticleOne = async () => {
-        const res = await axios.get('http://localhost:3001/api/articles')
+        const res = await Client.get('/articles')
         console.log(res.data)
         setSingleArticle(res.data[0])
     }
 
     const grabArticles = async () => {
-        const res = await axios.get('http://localhost:3001/api/articles')
+        const res = await Client.get('/articles')
         setArticles(res.data)
     }
 

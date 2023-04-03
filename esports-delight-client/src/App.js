@@ -1,4 +1,6 @@
 import logo from './logo.svg';
+import Client from './services/api'
+import { useEffect, useState } from "react"
 import './App.css';
 import { Routes,Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
