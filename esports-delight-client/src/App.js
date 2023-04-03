@@ -13,6 +13,7 @@ import Account from './pages/Account';
 import DetailedArticle from './pages/DetailedArticle';
 import PostPage from './pages/PostPage';
 import CreatePost from './pages/CreatePost';
+import MyPosts from './pages/MyPosts';
 
 function App() {
 
@@ -44,16 +45,16 @@ function App() {
     <div className='app'>
       <Nav />
       <Routes>
-        <Route path='/' element={<Dashboard user={user} setUser={setUser}/>} />
-        <Route path='/allNews' element={<NewsPage user={user} setUser={setUser}/>} />
-        <Route path='/allTournaments' element={<TournamentsPage user={user} setUser={setUser}/>} />
-        <Route path='/allTeams' element={<Teams user={user} setUser={setUser}/>} />
-        <Route path='/TournamentDetails/:id' element={<DetailedTournament user={user} setUser={setUser}/>} />
+        <Route path='/' element={<Dashboard user={user}/>} />
+        <Route path='/allNews' element={<NewsPage user={user}/>} />
+        <Route path='/allTournaments' element={<TournamentsPage user={user}/>} />
+        <Route path='/allTeams' element={<Teams user={user}/>} />
+        <Route path='/TournamentDetails/:id' element={<DetailedTournament user={user}/>} />
         <Route path='/Account' element={<Account user={user} setUser={setUser}/>} />
-        <Route path='/article/:id' element={<DetailedArticle user={user} setUser={setUser}/>} />
-        <Route path='/posts' element={<PostPage user={user} setUser={setUser}/>} />
+        <Route path='/article/:id' element={<DetailedArticle user={user}/>} />
+        <Route path='/posts' element={<PostPage user={user}/>} />
         <Route path='/posts/create' element={<CreatePost />} />
-        <Route path='/posts/create/myPosts' element={<CreatePost />} />
+        <Route path='/posts/create/myPosts' element={<MyPosts />} />
       </Routes>
     </div>
   );
