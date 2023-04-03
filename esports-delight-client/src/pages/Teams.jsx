@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
-import Client from "../../services/api"
+import Client from "../services/api"
 
 
 

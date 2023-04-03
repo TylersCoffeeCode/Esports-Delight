@@ -2,7 +2,7 @@ import csVideo from '../assests/ESLytube.mp4'
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link } from "react-router-dom"
-import Client from "../../services/api"
+import Client from "../services/api"
 
 
 

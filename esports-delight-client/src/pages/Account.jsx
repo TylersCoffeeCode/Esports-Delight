@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from "react-router-dom"
 import LoginComponent from "../components/LoginComponent"
 import RegisterComponent from "../components/RegisterComponent"
-import Client from "../../services/api"
+import Client from "../services/api"
 
 
 const Account = ({setUser}) => {
