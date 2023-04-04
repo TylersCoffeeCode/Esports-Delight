@@ -76,7 +76,7 @@ const LoginComponent = ({toggleSignUp, setUser}) => {
                         <h3>Don't have an account? <span className="cursor-pointer underline font-bold" onClick={()=>toggleSignUp()}>Sign up</span></h3>
                     </div>
                 </div>
-                <div className=" bg-black w-2/4 h-full bg-cover bg-center bg-[url(https://s3-eu-central-1.amazonaws.com/www-staging.esports.com/WP%20Media%20Folder%20-%20esports-com//var/app/current/web/app/uploads/2020/05/48581371966_876a4f4054_k.jpg)]">
+                <div className=" bg-black w-2/4 h-full bg-cover bg-center bg-[url(https://billelafros.b-cdn.net/wp-content/uploads/2021/06/Esports-Tournament.png)]">
 
                 </div>
             </div>

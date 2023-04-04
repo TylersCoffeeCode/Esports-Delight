@@ -41,10 +41,9 @@ const NewsPage = () => {
                 <div className=" bg-[rgba(0,0,0,0.8)] w-1/3 h-4/5 flex flex-wrap justify-center border-2 border-white">
                     <img src={singleArticle.image} alt="" className="w-full h-3/4 object-contain" />
                     <h1 className=" text-xl text-white">{singleArticle.title}</h1>
-                    <p className=" text-lg text-white text-center">{singleArticle.content}</p>
                     <Link className=" text-blue-300 w-full text-right"><p>Read More →</p></Link>
                 </div>
-                <div className="h-[90%] w-3/5 ml-6 flex flex-wrap border-2 border-white">
+                <div className="h-[95%] w-3/5 ml-6 flex flex-wrap border-2 content-between">
                     {articles.slice(1, 5).map((article) => (
                         <div className="w-full h-1/4 flex flex-wrap content-end border-white border-2" style={{
                             backgroundImage:

@@ -69,7 +69,7 @@ const Dashboard = () => {
                         }}>
                         <div className=" w-full h-1/4 bg-[rgba(0,0,0,0.8)] rounded">
                             <h1 className="text-white pl-2 mb-4">{singleArticle.title}</h1>
-                            <Link className=" text-blue-300 float-right mr-2"><p>Read More →</p></Link>
+                            <p className=" text-blue-300 float-right mr-2">Read More →</p>
                         </div>
                     </div>
                 </Link>
@@ -85,7 +85,7 @@ const Dashboard = () => {
                                 }}>
                                 <div className=" h-1/3 w-full bg-[rgba(0,0,0,0.8)] rounded">
                                     <h2 className="text-white pl-2">{article.title}</h2>
-                                    <Link className=" text-blue-300 float-right mr-2"><p>Read More →</p></Link>
+                                    <p className=" text-blue-300 float-right mr-2">Read More →</p>
                                 </div>
                             </div>
                         </Link>

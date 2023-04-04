@@ -30,7 +30,7 @@ const DetailedArticle = () => {
             <div className=" w-2/4 h-2/5 mt-8">
                 <img src={article.image} alt="" className="w-full h-full rounded-md"/>
             </div>
-            <div className=" w-3/4 h-[45%] mt-2 border-2 border-white text-white text-xl flex justify-center text-center rounded-md">
+            <div className=" w-3/4 h-[45%] mt-2 border-2 border-white text-white text-xl flex justify-center text-center rounded-md overflow-y-scroll">
                 <p>{article.content}</p>
             </div>
         </div>
