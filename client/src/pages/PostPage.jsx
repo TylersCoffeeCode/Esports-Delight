@@ -12,7 +12,7 @@ const PostPage = ({ user}) => {
     const [posts, setPosts] = useState([])
 
     const getPosts = async () => {
-        const res = await Client.get('http://localhost:3001/api/posts')
+        const res = await Client.get('/api/posts')
         setPosts(res.data)
         console.log(res.data);
     }
