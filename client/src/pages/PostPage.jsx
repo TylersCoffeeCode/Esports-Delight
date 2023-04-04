@@ -23,6 +23,12 @@ const PostPage = ({ user}) => {
         } else navigate('/Account')
     }
 
+    const viewPosts = () => {
+        if (user) {
+            navigate('/posts/create/myPosts')
+        } else navigate('/Account')
+    }
+
     useEffect(() => {
         getPosts()
         console.log(user);
@@ -33,7 +39,7 @@ const PostPage = ({ user}) => {
         <div className="bg-[rgb(0,31,63)] w-full h-[100vh] flex flex-wrap justify-center items-end">
             <div className="w-full h-8 mt-20 flex justify-center items-center">
                 <div className="bg-[rgb(17,122,227)] text-white w-[250px] text-center rounded-xl cursor-pointer mr-2" onClick={()=>createPost()}>Create Post</div>
-                <Link to='/posts/create/myPosts'><div className=" bg-white w-[250px] h-full text-center rounded-xl cursor-pointer">My Posts</div></Link>
+                <div onClick={()=>viewPosts()} className=" bg-white w-[250px] text-center rounded-xl cursor-pointer">My Posts</div>
             </div>
             <div className="w-2/4 h-[85%] overflow-y-scroll">
                 <div className=" w-full">

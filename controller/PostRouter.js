@@ -52,9 +52,20 @@ const CreatePost = async (req,res) => {
     }
 }
 
+const DeletePost = async (req, res) => {
+  try {
+    const {id} = req.params
+    await Posts.destroy({ where: { id: id } })
+    res.send({ msg: 'Meal Removed', payload: id, status: 'Ok' })
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
     GetPosts,
     CreatePost,
     GetPostById,
-    getPostByUserId
+    getPostByUserId,
+    DeletePost
 }
