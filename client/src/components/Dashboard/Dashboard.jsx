@@ -60,7 +60,7 @@ const Dashboard = () => {
                     <h2 className="text-white font-bold text-xl">News</h2>
                     <Link to='/allNews'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
                 </div>
-                <Link to={`/article/${singleArticle.id}`} className="flex flex-wrap w-5/12 h-5/6">
+                {singleArticle && (<Link to={`/article/${singleArticle.id}`} className="flex flex-wrap w-5/12 h-5/6">
                     <div className="flex w-full h-full mt-4 rounded items-end"
                         style={{
                             backgroundImage: `url(${singleArticle.image})`,
@@ -73,6 +73,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </Link>
+                )}
                 <div className="flex flex-wrap w-[58%] mt-4 h-5/6 justify-around content-between">
                     {articles.slice(1, 5).map((article) => (
                         <Link to={`/article/${article.id}`} className="w-[47%] h-[48.5%] flex items-end">
