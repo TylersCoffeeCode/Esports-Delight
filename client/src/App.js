@@ -7,7 +7,6 @@ import Nav from './components/Nav/Nav';
 import Dashboard from './components/Dashboard/Dashboard';
 import NewsPage from './pages/NewsPage';
 import TournamentsPage from './pages/TournamentsPage';
-import { Teams } from './pages/Teams';
 import DetailedTournament from './pages/DetailedTournament';
 import Account from './pages/Account';
 import DetailedArticle from './pages/DetailedArticle';
@@ -48,7 +47,6 @@ function App() {
         <Route path='/' element={<Dashboard user={user}/>} />
         <Route path='/allNews' element={<NewsPage user={user}/>} />
         <Route path='/allTournaments' element={<TournamentsPage user={user}/>} />
-        <Route path='/allTeams' element={<Teams user={user}/>} />
         <Route path='/TournamentDetails/:id' element={<DetailedTournament user={user}/>} />
         <Route path='/Account' element={<Account user={user} setUser={setUser}/>} />
         <Route path='/article/:id' element={<DetailedArticle user={user}/>} />

@@ -10,7 +10,6 @@ const Nav = () => {
         <div className='w-full flex justify-around items-center'>
           <Link to='/allTournaments' className=' text-white'>Tournaments</Link>
           <Link to='/allNews' className=' text-white'>Articles</Link>
-          <Link to='/allTeams' className=' text-white'>Teams</Link>
           <Link to='/posts' className=' text-white'>Posts</Link>
         </div>
       </div>
