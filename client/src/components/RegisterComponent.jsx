@@ -24,7 +24,7 @@ const RegisterComponent = ({toggleSignUp}) => {
         e.preventDefault()
         try {
             let userData = formValues
-            let response = await Client.post('http://localhost:3001/api/users/create', { userData })
+            let response = await Client.post('/users/create', { userData })
             console.log(response);
             toggleSignUp()
         } catch (error) {
