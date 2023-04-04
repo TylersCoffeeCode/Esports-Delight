@@ -6,8 +6,8 @@ import Client from "../../services/api"
 const Dashboard = () => {
 
     const [tournaments, setTournaments] = useState(null)
-    const [singleTournament, setSingleTournament] = useState([])
-    const [articles, setArticles] = useState([])
+    const [singleTournament, setSingleTournament] = useState(null)
+    const [articles, setArticles] = useState(null)
     const [singleArticle, setSingleArticle] = useState([])
     const [showPopup, setShowPopup] = useState(false)
     const [selectedTournament, setSelectedTournament] = useState(null)
@@ -75,7 +75,7 @@ const Dashboard = () => {
                 </Link>
                 )}
                 <div className="flex flex-wrap w-[58%] mt-4 h-5/6 justify-around content-between">
-                    {articles.slice(1, 5).map((article) => (
+                    {articles && articles.slice(1, 5).map((article) => (
                         <Link to={`/article/${article.id}`} className="w-[47%] h-[48.5%] flex items-end">
                             <div className=" w-full h-full rounded-md flex items-end"
                                 style={{
@@ -98,7 +98,7 @@ const Dashboard = () => {
                     <Link to='/allTournaments'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
                 </div>
                 <div className=" w-[95%] h-1/2 mt-4 border-2 flex flex-wrap justify-center cursor-pointer">
-                    <Link to={`/TournamentDetails/${singleTournament.id}`} className="w-full h-full">
+                    {singleTournament && <Link to={`/TournamentDetails/${singleTournament.id}`} className="w-full h-full">
                         <div className=" w-full h-full flex flex-wrap bg-[rgba(0,0,0,0.7)]">
                             <div className=" w-2/4 bg-[#0000007c] flex flex-wrap items-center">
                                 <h2 className=" w-full text-center text-white text-2xl">{singleTournament.title}</h2>
@@ -112,6 +112,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </Link>
+                    }
 
                 </div>
                 <div className="w-[95%] h-1/3 mt-2 flex flex-wrap flex-col overflow-x-scroll">
