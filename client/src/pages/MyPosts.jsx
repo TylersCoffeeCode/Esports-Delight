@@ -17,14 +17,14 @@ const MyPosts = () => {
     }
 
     const getPosts = async () => {
-        const res = await Client.get(`http://localhost:3001/api/posts/myPosts/${id}`)
+        const res = await Client.get(`/posts/myPosts/${id}`)
         setPosts(res.data.post)
         console.log(res.data.post);
     }
 
     const handleDelete = async (id) => {
         try {
-            await Client.delete(`posts/delete/${id}`)
+            await Client.delete(`/posts/delete/${id}`)
             getPosts()
         } catch (error) {
             throw error

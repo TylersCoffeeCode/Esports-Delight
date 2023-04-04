@@ -25,7 +25,7 @@ const LoginComponent = ({toggleSignUp, setUser}) => {
         e.preventDefault()
         try {
             let userData = formValues
-            let response = await Client.post('http://localhost:3001/api/users/login', { userData })
+            let response = await Client.post('/users/login', { userData })
             console.log(response);
             localStorage.setItem('token', response.data.token)
             localStorage.setItem('user_id', response.data.user.id)
