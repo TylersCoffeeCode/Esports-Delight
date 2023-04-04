@@ -24,7 +24,7 @@ const CreatePost = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const res = await Client.post('/posts/create', formData)
+            await Client.post('/posts/create', formData)
         } catch (error) {
             throw error
         }

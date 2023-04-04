@@ -100,7 +100,7 @@ const MyPosts = () => {
             <div className="w-2/3 h-3/4 flex flex-wrap justify-around overflow-y-scroll">
                 {posts.map((post) => (
                     <div className="bg-[rgb(17,122,227)] text-white w-2/5 h-[550px] mb-8 mt-8 border-4 border-black rounded-lg overflow-hidden">
-                        <img src={post.image} alt="" className=" w-full h-4/5 border-b-4 border-black" />
+                        <img src={post.image} alt="" className=" w-full h-3/5 border-b-4 border-black" />
                         <div className="h-1/5">
                             <h1 className=" text-2xl font-bold ml-2">{post.content}</h1>
                             <div className="ml-2 h-2/3 flex flex-wrap justify-evenly items-end">
