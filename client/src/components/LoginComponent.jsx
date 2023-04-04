@@ -2,9 +2,13 @@ import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Link } from "react-router-dom"
 import Client from "../services/api"
+import { useNavigate } from 'react-router-dom'
 
 
 const LoginComponent = ({toggleSignUp, setUser}) => {
+
+    const navigate = useNavigate()
+
 
     const initialState = {
         userName: '',
@@ -26,6 +30,7 @@ const LoginComponent = ({toggleSignUp, setUser}) => {
             localStorage.setItem('token', response.data.token)
             localStorage.setItem('user_id', response.data.user.id)
             setUser(userData)
+            navigate('/')
         } catch (error) {
             console.log(error);
         }

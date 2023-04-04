@@ -7,6 +7,7 @@ import Client from "../services/api"
 const RegisterComponent = ({toggleSignUp}) => {
 
 
+
     const initialState = {
         userName: '',
         email: '',
@@ -25,6 +26,7 @@ const RegisterComponent = ({toggleSignUp}) => {
             let userData = formValues
             let response = await Client.post('http://localhost:3001/api/users/create', { userData })
             console.log(response);
+            toggleSignUp()
         } catch (error) {
             console.log(error);
         }

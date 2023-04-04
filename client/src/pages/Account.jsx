@@ -7,7 +7,7 @@ import Client from "../services/api"
 
 
 const Account = ({setUser}) => {
-
+    
     const initialState = {
         userName: '',
         email: '',
@@ -29,7 +29,6 @@ const Account = ({setUser}) => {
         try {
             let userData = formValues
             let response = await Client.post('http://localhost:3001/api/users/login', { userData })
-            console.log(response);
         } catch (error) {
             console.log(error);
         }
