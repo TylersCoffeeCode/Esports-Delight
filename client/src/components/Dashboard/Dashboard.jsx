@@ -5,7 +5,7 @@ import Client from "../../services/api"
 
 const Dashboard = () => {
 
-    const [tournaments, setTournaments] = useState([])
+    const [tournaments, setTournaments] = useState(null)
     const [singleTournament, setSingleTournament] = useState([])
     const [articles, setArticles] = useState([])
     const [singleArticle, setSingleArticle] = useState([])
@@ -16,25 +16,25 @@ const Dashboard = () => {
 
 
     const getTournaments = async () => {
-        const res = await Client.get('tournaments/')
+        const res = await Client.get('/tournaments/')
         console.log(res.data);
         setTournaments(res.data)
     }
 
     const grabTournamentOne = async () => {
-        const res = await Client.get('tournaments/')
+        const res = await Client.get('/tournaments/')
         console.log(res.data[1]);
         setSingleTournament(res.data[0])
     }
 
     const grabArticleOne = async () => {
-        const res = await Client.get('articles')
+        const res = await Client.get('/articles')
         console.log(res.data)
         setSingleArticle(res.data[0])
     }
 
     const grabArticles = async () => {
-        const res = await Client.get('articles')
+        const res = await Client.get('/articles')
         setArticles(res.data)
     }
 
@@ -115,7 +115,7 @@ const Dashboard = () => {
 
                 </div>
                 <div className="w-[95%] h-1/3 mt-2 flex flex-wrap flex-col overflow-x-scroll">
-                    {tournaments.slice(1).map((tournament) => (
+                    {tournaments && tournaments.slice(1).map((tournament) => (
                         <Link to={`/TournamentDetails/${tournament.id}`} className="flex flex-wrap w-64 h-full mr-6">
                             <div className={'flex flex-wrap w-full h-full border-2 border-white cursor-pointer'}
                                 style={{ backgroundImage: `url(${tournament.gameImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
