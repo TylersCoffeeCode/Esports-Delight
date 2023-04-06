@@ -31,7 +31,6 @@ const PostPage = ({ user}) => {
 
     useEffect(() => {
         getPosts()
-        console.log(user);
     }, [])
 
 

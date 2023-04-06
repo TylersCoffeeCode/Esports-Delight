@@ -19,7 +19,6 @@ const NewsPage = () => {
     const getArticles = async () => {
         const res = await Client.get('http://localhost:3001/api/articles')
         setArticles(res.data)
-        console.log(res.data);
     }
 
     const getSignleArticle = async () => {

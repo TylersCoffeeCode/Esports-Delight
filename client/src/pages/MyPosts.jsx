@@ -19,7 +19,6 @@ const MyPosts = () => {
     const getPosts = async () => {
         const res = await Client.get(`/posts/myPosts/${id}`)
         setPosts(res.data.post)
-        console.log(res.data.post);
     }
 
     const handleDelete = async (id) => {
@@ -62,7 +61,6 @@ const MyPosts = () => {
 
     const handleFormSubmit = (id) => async (e) => {
         e.preventDefault()
-        console.log(formData)
         handleSubmit(id)
         flipPopup()
         getPosts()

@@ -17,19 +17,16 @@ const Dashboard = () => {
 
     const getTournaments = async () => {
         const res = await Client.get('/tournaments/')
-        console.log(res.data);
         setTournaments(res.data)
     }
 
     const grabTournamentOne = async () => {
         const res = await Client.get('/tournaments/')
-        console.log(res.data[1]);
         setSingleTournament(res.data[0])
     }
 
     const grabArticleOne = async () => {
         const res = await Client.get('/articles')
-        console.log(res.data)
         setSingleArticle(res.data[0])
     }
 

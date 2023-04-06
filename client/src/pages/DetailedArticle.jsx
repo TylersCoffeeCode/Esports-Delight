@@ -12,7 +12,6 @@ const DetailedArticle = () => {
 
     const grabArticle = async () => {
         const res = await Client.get(`http://localhost:3001/api/articles/${id}`)
-        console.log(res.data.article)
         setArticle(res.data.article)
     }
 

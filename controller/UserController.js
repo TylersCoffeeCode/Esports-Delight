@@ -23,7 +23,6 @@ const FindUserById = async (req, res) => {
 const Register = async (req, res) => {
     try {
         const { userData } = req.body
-        console.log(userData.email)
         let passwordDigest = await middleware.hashPassword(userData.password)
         const user = await Users.create({ email: userData.email, password: passwordDigest, userName: userData.userName })
         res.send(user)
@@ -35,20 +34,14 @@ const Register = async (req, res) => {
 const Login = async (req, res) => {
     try {
         const { userData } = req.body;
-        console.log(userData.userName, 'user');
-        console.log(userData.password, 'password');
         const user = await Users.findOne({
             where: { userName: userData.userName },
             raw: true
         })
-        console.log(user);
-        console.log(user.password);
-        console.log(userData.password);
         let matched = await middleware.comparePassword(
             user.password,
             userData.password
         )
-        console.log(user.password, userData.password);
         if (matched) {
             let payload = {
                 id: user.id,
