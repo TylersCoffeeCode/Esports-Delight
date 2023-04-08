@@ -25,7 +25,6 @@ const RegisterComponent = ({toggleSignUp}) => {
         try {
             let userData = formValues
             let response = await Client.post('/users/create', { userData })
-            console.log(response);
             toggleSignUp()
         } catch (error) {
             console.log(error);

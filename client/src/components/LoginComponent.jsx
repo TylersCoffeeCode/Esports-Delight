@@ -26,7 +26,6 @@ const LoginComponent = ({toggleSignUp, setUser}) => {
         try {
             let userData = formValues
             let response = await Client.post('/users/login', { userData })
-            console.log(response);
             localStorage.setItem('token', response.data.token)
             localStorage.setItem('user_id', response.data.user.id)
             setUser(userData)
