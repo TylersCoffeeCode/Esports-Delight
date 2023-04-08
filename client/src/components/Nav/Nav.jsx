@@ -15,7 +15,7 @@ const Nav = () => {
       </div>
       <div className="navRight w-1/5 flex items-center justify-end">
         <div className='w-2/4 h-full flex items-center justify-end'>
-          <div className='flex h-3/4 items-center border-l-2 justify-between w-full'>
+          <div className='flex h-3/4 items-center border-l-2 justify-around w-full'>
             <Link to='/Account' className=' text-white pl-4'>👤</Link>
             <Link className='mr-6 text-white'>⚙️</Link>
           </div>
@@ -25,3 +25,5 @@ const Nav = () => {
   )
 }
 export default Nav
+
+
