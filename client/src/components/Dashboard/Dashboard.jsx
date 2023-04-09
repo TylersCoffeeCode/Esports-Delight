@@ -52,7 +52,7 @@ const Dashboard = () => {
 
     return (
         <div className=" bg-[#0B0C13] w-full h-[100vh] flex flex-wrap items-start">
-            <div className="w-[97%] h-[80vh] mt-[5rem] flex flex-wrap bg-green-300 justify-center">
+            <div className="w-[97%] h-[80vh] mt-[5rem] flex flex-wrap bg-green-300 justify-center mb-4">
                 <div className=" w-full border-b-2 flex justify-between items-center">
                     <h2 className="text-white font-bold text-xl">News</h2>
                     <Link to='/allNews'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
@@ -88,12 +88,12 @@ const Dashboard = () => {
                     ))}
                 </div>
             </div>
-            <div className=" w-11/12 ml-8">
+            <div className=" w-full h-[60vh] bg-purple-900">
                 <div className=" w-full border-b-2 pb-2 flex justify-between items-center">
                     <h2 className="text-white font-bold text-xl">Tournaments</h2>
                     <Link to='/allTournaments'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
                 </div>
-                <div className=" w-[95%] h-1/2 mt-4 border-2 flex flex-wrap justify-center cursor-pointer">
+                <div className=" w-[97%] h-1/2 mt-4 border-2 flex flex-wrap justify-center cursor-pointer mb-6">
                     {singleTournament && <Link to={`/TournamentDetails/${singleTournament.id}`} className="w-full h-full">
                         <div className=" w-full h-full flex flex-wrap bg-[rgba(0,0,0,0.7)]">
                             <div className=" w-2/4 bg-[#0000007c] flex flex-wrap items-center">
