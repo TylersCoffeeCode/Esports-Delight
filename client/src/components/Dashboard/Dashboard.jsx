@@ -51,7 +51,7 @@ const Dashboard = () => {
 
 
     return (
-        <div className=" bg-[#0B0C13] w-full h-fit flex flex-wrap justify-center items-start">
+        <div className=" bg-[#0B0C13] w-full h-[170vh] flex flex-wrap justify-center items-start">
             <div className="w-[97%] h-[80vh] mt-[5rem] flex flex-wrap justify-center mb-4">
                 <div className=" w-full border-b-2 flex justify-between items-center">
                     <h2 className="text-white font-bold text-xl">News</h2>
