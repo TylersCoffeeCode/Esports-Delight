@@ -52,37 +52,36 @@ const Dashboard = () => {
 
     return (
         <div className=" bg-[#0B0C13] w-full h-[100vh] flex flex-wrap items-start">
-            <div className="w-full h-[60%] ml-2 mt-[5rem] flex flex-wrap bg-green-300 justify-center">
-                <div className=" w-full border-b-2 pb-2 flex justify-between items-center">
+            <div className="w-[97%] h-[80vh] mt-[5rem] flex flex-wrap bg-green-300 justify-center">
+                <div className=" w-full border-b-2 flex justify-between items-center">
                     <h2 className="text-white font-bold text-xl">News</h2>
                     <Link to='/allNews'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
                 </div>
-                {singleArticle && (<Link to={`/article/${singleArticle.id}`} className=" flex w-[97%] h-2/4 flex-wrap">
-                    <div className=" h-full w-full mt-2 flex flex-wrap rounded-md items-end"
+                {singleArticle && (<Link to={`/article/${singleArticle.id}`} className=" flex w-[97%] h-1/4 flex-wrap">
+                    <div className=" h-full w-full mt-2 flex flex-wrap rounded-md items-end bg-purple-500"
                         style={{
                             backgroundImage: `url(${singleArticle.image})`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center'
                         }}>
-                        <div className=" bg-black h-1/4 w-full rounded-md">
+                        <div className=" bg-black h-1/3 w-full rounded-md">
                             <h1 className="text-white ml-2">{singleArticle.title}</h1>
                             <p className=" text-blue-300 ml-2">Read More →</p>
                         </div>
                     </div>
                 </Link>
                 )}
-                <div className="flex flex-wrap bg-red-200 overflow-y-scroll h-2/4">
+                <div className="flex flex-wrap flex-col bg-red-200 h-2/4 w-[97%] overflow-x-scroll">
                     {articles && articles.slice(1, 5).map((article) => (
-                        <Link to={`/article/${article.id}`} className="w-[47%] h-[48.5%] flex items-end">
+                        <Link to={`/article/${article.id}`} className="w-[65vw] h-full flex items-end mr-2">
                             <div className=" w-full h-full rounded-md flex items-end"
                                 style={{
                                     backgroundImage: `url(${article.image})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center'
                                 }}>
-                                <div className=" h-1/3 w-full bg-[rgba(0,0,0,0.8)] rounded">
+                                <div className=" h-1/5 w-full bg-[rgba(0,0,0,0.8)] rounded">
                                     <h2 className="text-white pl-2">{article.title}</h2>
-                                    <p className=" text-blue-300 float-right mr-2">Read More →</p>
                                 </div>
                             </div>
                         </Link>
