@@ -51,14 +51,14 @@ const Dashboard = () => {
 
 
     return (
-        <div className=" bg-[#0B0C13] w-full h-[100vh] flex flex-wrap items-start">
-            <div className="w-[97%] h-[80vh] mt-[5rem] flex flex-wrap bg-green-300 justify-center mb-4">
+        <div className=" bg-[#0B0C13] w-full h-fit flex flex-wrap justify-center items-start">
+            <div className="w-[97%] h-[80vh] mt-[5rem] flex flex-wrap justify-center mb-4">
                 <div className=" w-full border-b-2 flex justify-between items-center">
                     <h2 className="text-white font-bold text-xl">News</h2>
                     <Link to='/allNews'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
                 </div>
                 {singleArticle && (<Link to={`/article/${singleArticle.id}`} className=" flex w-[97%] h-1/4 flex-wrap">
-                    <div className=" h-full w-full mt-2 flex flex-wrap rounded-md items-end bg-purple-500"
+                    <div className=" h-full w-full mt-2 flex flex-wrap rounded-md items-end border-2 border-white"
                         style={{
                             backgroundImage: `url(${singleArticle.image})`,
                             backgroundSize: 'cover',
@@ -71,7 +71,7 @@ const Dashboard = () => {
                     </div>
                 </Link>
                 )}
-                <div className="flex flex-wrap flex-col bg-red-200 h-2/4 w-[97%] overflow-x-scroll">
+                <div className="flex flex-wrap flex-col h-2/4 w-[97%] overflow-x-scroll">
                     {articles && articles.slice(1, 5).map((article) => (
                         <Link to={`/article/${article.id}`} className="w-[65vw] h-full flex items-end mr-2">
                             <div className=" w-full h-full rounded-md flex items-end"
@@ -88,7 +88,7 @@ const Dashboard = () => {
                     ))}
                 </div>
             </div>
-            <div className=" w-full h-[60vh] bg-purple-900">
+            <div className=" w-[97%] h-[65vh]">
                 <div className=" w-full border-b-2 pb-2 flex justify-between items-center">
                     <h2 className="text-white font-bold text-xl">Tournaments</h2>
                     <Link to='/allTournaments'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
