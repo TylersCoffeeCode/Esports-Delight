@@ -51,29 +51,28 @@ const Dashboard = () => {
 
 
     return (
-        <div className=" bg-[#0B0C13] w-full h-[170vh] flex flex-wrap justify-center items-start">
-            <div className="w-[97%] h-[80vh] mt-[5rem] flex flex-wrap justify-center mb-4">
+        <div className=" bg-[#0B0C13] w-full h-[155vh] flex flex-wrap justify-center items-start content-start">
+            <div className="w-[97%] h-[80vh] mt-[5rem] flex flex-wrap justify-center bg-fuchsia-500 md:justify-start md:content-around">
                 <div className=" w-full border-b-2 flex justify-between items-center">
                     <h2 className="text-white font-bold text-xl">News</h2>
                     <Link to='/allNews'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
                 </div>
-                {singleArticle && (<Link to={`/article/${singleArticle.id}`} className=" flex w-[97%] h-1/4 flex-wrap">
-                    <div className=" h-full w-full mt-2 flex flex-wrap rounded-md items-end border-2 border-white"
+                {singleArticle && (<Link to={`/article/${singleArticle.id}`} className=" flex w-[97%] h-1/4 flex-wrap sm:h-1/2 md:w-2/5 md:h-3/4">
+                    <div className=" h-full w-full flex flex-wrap rounded-md items-end border-2 border-white"
                         style={{
                             backgroundImage: `url(${singleArticle.image})`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center'
                         }}>
-                        <div className=" bg-black h-1/3 w-full rounded-md">
+                        <div className=" bg-black h-1/3 w-full rounded-md sm:h-1/4 md:h-1/5">
                             <h1 className="text-white ml-2">{singleArticle.title}</h1>
-                            <p className=" text-blue-300 ml-2">Read More →</p>
                         </div>
                     </div>
                 </Link>
                 )}
-                <div className="flex flex-wrap flex-col h-2/4 w-[97%] overflow-x-scroll">
+                <div className="flex flex-wrap flex-col h-2/4 w-[20%] overflow-x-scroll sm:h-1/3 md:flex-row md:h-3/4 md:w-3/5 bg-green-300">
                     {articles && articles.slice(1, 5).map((article) => (
-                        <Link to={`/article/${article.id}`} className="w-[65vw] h-full flex items-end mr-2">
+                        <Link to={`/article/${article.id}`} className="w-[65vw] h-full flex items-end mr-2 md:w-3/5 md:h-3/4">
                             <div className=" w-full h-full rounded-md flex items-end"
                                 style={{
                                     backgroundImage: `url(${article.image})`,
@@ -113,7 +112,7 @@ const Dashboard = () => {
                 </div>
                 <div className="w-[95%] h-1/3 mt-2 flex flex-wrap flex-col overflow-x-scroll">
                     {tournaments && tournaments.slice(1).map((tournament) => (
-                        <Link to={`/TournamentDetails/${tournament.id}`} className="flex flex-wrap w-64 h-full mr-6">
+                        <Link to={`/TournamentDetails/${tournament.id}`} className="flex flex-wrap w-1/3 h-full mr-6">
                             <div className={'flex flex-wrap w-full h-full border-2 border-white cursor-pointer'}
                                 style={{ backgroundImage: `url(${tournament.gameImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                                 <div className="w-full flex flex-wrap justify-center bg-[rgba(0,0,0,0.7)] items-center">
