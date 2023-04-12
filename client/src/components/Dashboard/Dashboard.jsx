@@ -57,7 +57,7 @@ const Dashboard = () => {
                     <h2 className="text-white font-bold text-xl">News</h2>
                     <Link to='/allNews'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
                 </div>
-                {singleArticle && (<Link to={`/article/${singleArticle.id}`} className=" flex w-[97%] h-1/4 flex-wrap sm:h-1/2 md:w-2/5 md:h-3/4">
+                {singleArticle && (<Link to={`/article/${singleArticle.id}`} className=" flex w-[97%] h-1/4 flex-wrap sm:h-1/2 md:w-2/5 md:h-3/4 md:mr-2">
                     <div className=" h-full w-full flex flex-wrap rounded-md items-end border-2 border-white"
                         style={{
                             backgroundImage: `url(${singleArticle.image})`,
@@ -70,9 +70,9 @@ const Dashboard = () => {
                     </div>
                 </Link>
                 )}
-                <div className="flex flex-wrap flex-col h-2/4 w-[20%] overflow-x-scroll sm:h-1/3 md:flex-row md:h-3/4 md:w-3/5 bg-green-300">
+                <div className="flex flex-wrap flex-col h-2/4 w-[20%] overflow-x-scroll sm:h-1/3 md:flex-row md:h-3/4 md:w-[58%] md:justify-between bg-green-300">
                     {articles && articles.slice(1, 5).map((article) => (
-                        <Link to={`/article/${article.id}`} className="w-[65vw] h-full flex items-end mr-2 md:w-3/5 md:h-3/4">
+                        <Link to={`/article/${article.id}`} className="w-[65vw] h-full flex items-end mr-2 md:w-[48%] md:h-2/5">
                             <div className=" w-full h-full rounded-md flex items-end"
                                 style={{
                                     backgroundImage: `url(${article.image})`,
