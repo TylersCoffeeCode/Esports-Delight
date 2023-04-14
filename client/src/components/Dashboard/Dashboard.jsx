@@ -52,7 +52,7 @@ const Dashboard = () => {
 
     return (
         <div className=" bg-[#0B0C13] w-full h-[155vh] flex flex-wrap justify-center items-start content-start">
-            <div className="w-[97%] h-[80vh] mt-[5rem] flex flex-wrap justify-center bg-fuchsia-500 md:justify-start md:content-start">
+            <div className="w-[97%] h-[80vh] mt-[5rem] flex flex-wrap justify-center md:justify-start md:content-start">
                 <div className=" w-full border-b-2 flex justify-between items-center">
                     <h2 className="text-white font-bold text-xl">News</h2>
                     <Link to='/allNews'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
@@ -70,7 +70,7 @@ const Dashboard = () => {
                     </div>
                 </Link>
                 )}
-                <div className="flex flex-wrap flex-col h-2/4 w-[20%] overflow-x-scroll sm:h-1/3 md:flex-row md:h-3/4 md:w-[58%] md:justify-between bg-green-300 md:mt-4 md:overflow-x-visible">
+                <div className="flex flex-wrap flex-col h-2/4 w-[20%] overflow-x-scroll sm:h-1/3 md:flex-row md:h-3/4 md:w-[58%] md:justify-between md:mt-4 md:overflow-x-visible">
                     {articles && articles.slice(1, 5).map((article) => (
                         <Link to={`/article/${article.id}`} className="w-[65vw] h-full flex items-end mr-2 md:w-[48%] md:h-[48%]">
                             <div className=" w-full h-full rounded-md flex items-end"
