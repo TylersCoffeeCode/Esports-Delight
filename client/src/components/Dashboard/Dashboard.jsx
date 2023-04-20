@@ -70,7 +70,7 @@ const Dashboard = () => {
                     </div>
                 </Link>
                 )}
-                <div className="flex flex-wrap flex-col h-2/4 w-[90%] overflow-x-scroll sm:h-1/3 md:flex-row md:h-3/4 md:w-[58%] md:justify-between md:mt-4 md:overflow-x-visible">
+                <div className="flex flex-wrap flex-col h-2/4 w-[90%] overflow-x-scroll sm:h-1/3 md:flex-row md:h-3/4 md:w-[58%] md:justify-between md:mt-4 md:overflow-x-visible  md:content-between">
                     {articles && articles.slice(1, 5).map((article) => (
                         <Link to={`/article/${article.id}`} className="w-[65vw] h-full flex items-end mr-2 md:w-[48%] md:h-[48%]">
                             <div className=" w-full h-full rounded-md flex items-end"
