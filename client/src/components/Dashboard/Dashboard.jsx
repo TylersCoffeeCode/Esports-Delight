@@ -57,7 +57,7 @@ const Dashboard = () => {
                     <h2 className="text-white font-bold text-xl">News</h2>
                     <Link to='/allNews'><h2 className="text-blue-300 font-bold text-l">View All →</h2></Link>
                 </div>
-                {singleArticle && (<Link to={`/article/${singleArticle.id}`} className=" flex w-[97%] h-1/4 flex-wrap sm:h-1/2 md:w-2/5 md:h-3/4 md:mr-2 md:mt-4">
+                {singleArticle && (<Link to={`/article/${singleArticle.id}`} className=" mt-4 flex w-[97%] h-1/4 flex-wrap sm:h-1/2 md:w-2/5 md:h-3/4 md:mr-2 md:mt-4">
                     <div className=" h-full w-full flex flex-wrap rounded-md items-end border-2 border-white"
                         style={{
                             backgroundImage: `url(${singleArticle.image})`,
